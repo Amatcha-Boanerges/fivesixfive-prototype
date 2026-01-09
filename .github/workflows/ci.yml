@@ -1,0 +1,40 @@
+name: Vite React CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x] # You can adjust these Node.js versions
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: '**/package-lock.json' # Path to package-lock.json
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Lint project
+      run: npm run lint
+
+    - name: Build project
+      run: npm run build
+
+    # If you have tests, you can add a step like this:
+    # - name: Run tests
+    #   run: npm test
+
