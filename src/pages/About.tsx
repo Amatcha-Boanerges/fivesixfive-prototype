@@ -55,7 +55,7 @@ export default function About() {
         {/* Hero Section */}
         <section className="bg-muted py-20 md:py-28">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto max-w-3xl text-center animate-slide-up">
               <h1 className="font-heading text-4xl font-semibold text-foreground md:text-5xl">
                 Partnering for <span className="gradient-text">Sustainable Growth</span>
               </h1>
@@ -71,7 +71,7 @@ export default function About() {
         <section className="bg-background py-20 md:py-28">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid items-center gap-12 lg:grid-cols-2">
-              <div className="relative">
+              <div className="relative animate-slide-up">
                 <div className="aspect-[4/3] overflow-hidden rounded-2xl">
                   <img
                     src="/team-light.jpg"
@@ -80,7 +80,7 @@ export default function About() {
                   />
                 </div>
               </div>
-              <div>
+              <div className="animate-slide-up" style={{ animationDelay: "0.1s" }}>
                 <h2 className="font-heading text-3xl font-semibold text-foreground md:text-4xl">
                   Our Story
                 </h2>
