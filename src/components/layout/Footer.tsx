@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Youtube } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import SocialIcons from "@/components/SocialIcons";
 
 const footerLinks = {
   company: [
@@ -40,29 +41,11 @@ export function Footer() {
             <p className="text-background/70 font-body text-sm leading-relaxed mb-6 max-w-sm">
               We make your people tick. We make your company work. Partner with us for strategic, values-driven organizational development.
             </p>
-            <div className="flex gap-4">
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors duration-200"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={18} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors duration-200"
-                aria-label="Twitter"
-              >
-                <Twitter size={18} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors duration-200"
-                aria-label="YouTube"
-              >
-                <Youtube size={18} />
-              </a>
-            </div>
+            <SocialIcons 
+              variant="primary" 
+              iconSize="sm" 
+              className="justify-start"
+            />
           </div>
 
           {/* Links Columns */}
@@ -124,17 +107,17 @@ export function Footer() {
         {/* Contact Bar */}
         <div className="mt-12 pt-8 border-t border-background/10">
           <div className="flex flex-wrap gap-8 text-sm text-background/70">
-            <a href="mailto:info@fivesixfive.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <a href="mailto:maame.gaisey@fivesixfive.co" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Mail size={16} />
-              info@fivesixfive.com
+              maame.gaisey@fivesixfive.co
             </a>
-            <a href="tel:+1234567890" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <a href="tel:+233244054973" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Phone size={16} />
-              +1 (234) 567-890
+              +233 24 405 4973
             </a>
             <span className="flex items-center gap-2">
               <MapPin size={16} />
-              Global • Remote-First
+              Office No. 2 Nii Amon Link, Accra, Greater Accra
             </span>
           </div>
         </div>

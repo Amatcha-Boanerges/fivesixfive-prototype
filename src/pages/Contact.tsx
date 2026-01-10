@@ -13,25 +13,25 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@apexconsulting.com",
-    href: "mailto:hello@apexconsulting.com",
+    value: "maame.gaisey@fivesixfive.co",
+    href: "mailto:maame.gaisey@fivesixfive.co",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+1 (234) 567-890",
-    href: "tel:+1234567890",
+    value: "+233 24 405 4973",
+    href: "tel:+233244054973",
   },
   {
     icon: MapPin,
     label: "Office",
-    value: "123 Business Avenue, Suite 100, New York, NY 10001",
+    value: "Office No. 2 Nii Amon Link, Accra, Greater Accra",
     href: "#",
   },
   {
     icon: Clock,
     label: "Business Hours",
-    value: "Mon - Fri: 9:00 AM - 6:00 PM EST",
+    value: "Mon - Fri: 9:00 AM - 6:00 PM GMT",
     href: "#",
   },
 ];
