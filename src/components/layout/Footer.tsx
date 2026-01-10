@@ -43,8 +43,7 @@ export function Footer() {
             </p>
             <SocialIcons 
               variant="primary" 
-              iconSize="sm" 
-              className="justify-start"
+              iconSize="sm"
             />
           </div>
 

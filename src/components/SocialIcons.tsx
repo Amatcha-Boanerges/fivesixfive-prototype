@@ -19,7 +19,7 @@ export default function SocialIcons({
   socialLinks = {}
 }: SocialIconsProps) {
   const sizeClasses = {
-    sm: 'w-4 h-4',
+    sm: 'w-[18px] h-[18px]',
     md: 'w-6 h-6',
     lg: 'w-8 h-8'
   };
@@ -34,8 +34,8 @@ export default function SocialIcons({
       icon: 'text-gray-700 hover:text-gray-900'
     },
     primary: {
-      container: 'border-background/20 hover:bg-primary/20 hover:border-primary/60 bg-background/10',
-      icon: 'text-background/70 hover:text-primary'
+      container: '',
+      icon: 'text-background/70'
     }
   };
 
@@ -92,20 +92,19 @@ export default function SocialIcons({
   ];
 
   return (
-    <div className={`flex justify-center gap-6 ${className}`}>
+    <div className={`flex gap-4 ${className}`}>
       {socialPlatforms.map((platform) => (
         <a
           key={platform.name}
           href={platform.href}
           target="_blank"
           rel="noopener noreferrer"
-          className={`rounded-full border-2 ${currentVariant.container} p-3 transition-colors ${currentVariant.icon}`}
+          className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors duration-200"
           aria-label={platform.name}
         >
-          {platform.icon}
-          {showLabels && (
-            <span className="sr-only">{platform.name}</span>
-          )}
+          <div className={currentVariant.icon}>
+            {platform.icon}
+          </div>
         </a>
       ))}
     </div>
