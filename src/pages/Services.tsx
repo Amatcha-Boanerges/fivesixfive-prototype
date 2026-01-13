@@ -56,7 +56,7 @@ const Services: React.FC = () => {
         </section>
 
         {/* Services Grid */}
-        <section className="pb-24">
+        <section className="pt-12 pb-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-12">
               {offerings.map((o, i) => (
