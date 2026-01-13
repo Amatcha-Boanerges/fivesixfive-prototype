@@ -40,14 +40,14 @@ const Services: React.FC = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        {/* Header */}
-        <section className="py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <h1 className="text-5xl md:text-6xl font-heading mb-8">
-                Our <span className="text-primary">Core Expertise</span>.
+        {/* Hero */}
+        <section className="pt-32 pb-20 gradient-hero">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6">
+                Our Core Expertise
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-xl text-primary-foreground/80 font-body">
                 We provide a suite of services designed to address the complex human challenges of modern business.
                 From culture to compliance, we've got you aligned.
               </p>
