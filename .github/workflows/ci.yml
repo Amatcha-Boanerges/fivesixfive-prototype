@@ -2,9 +2,9 @@ name: Vite React CI
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main, develop, playground ]
   pull_request:
-    branches: [ main, develop ]
+    branches: [ main, develop, playground ]
 
 jobs:
   build:
