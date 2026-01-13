@@ -7,21 +7,33 @@ export function PartnerSection() {
     "Finance",
   ];
 
+  // Duplicate partners for seamless loop
+  const duplicatedPartners = [...partners, ...partners];
+
   return (
-    <section className="border-b border-border bg-background py-12">
+    <section className="border-b border-border bg-background py-12 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <p className="font-ui mb-8 text-center text-sm font-medium uppercase tracking-wider text-muted-foreground">
           Trusted by forward-thinking organizations
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-70">
-          {partners.map((partner) => (
-            <span
-              key={partner}
-              className="font-heading text-lg font-semibold text-muted-foreground/60 transition-colors hover:text-muted-foreground"
-            >
-              {partner}
-            </span>
-          ))}
+        <div className="relative">
+          {/* Gradient overlays for fade effect */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+          
+          {/* Ticker container */}
+          <div className="overflow-hidden">
+            <div className="flex items-center gap-8 md:gap-12 opacity-70 animate-ticker">
+              {duplicatedPartners.map((partner, index) => (
+                <span
+                  key={`${partner}-${index}`}
+                  className="font-heading text-lg font-semibold text-muted-foreground/60 transition-colors hover:text-muted-foreground whitespace-nowrap flex-shrink-0"
+                >
+                  {partner}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
