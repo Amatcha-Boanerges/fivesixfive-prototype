@@ -1,0 +1,29 @@
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+
+const VerticalCarousel = ({ slides }: { slides: Slide[] }) => {
+  const [index, setIndex] = useState(0);
+
+  return (
+    <div className="relative h-[400px] w-full overflow-hidden border rounded-lg bg-white">
+      {/* Navigation Buttons */}
+      <div className="absolute right-4 top-1/2 -translate-y-1/2 z-10 flex flex-col gap-2">
+        <button onClick={() => setIndex(prev => Math.max(0, prev - 1))}>▲</button>
+        <button onClick={() => setIndex(prev => Math.min(slides.length - 1, prev + 1))}>▼</button>
+      </div>
+
+      {/* Sliding Track */}
+      <motion.div
+        animate={{ y: `-${index * 100}%` }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        className="h-full w-full"
+      >
+        {slides.map((slide) => (
+          <div key={slide.id} className="h-full w-full flex items-center justify-center p-8">
+            <h2 className="text-2xl font-bold">{slide.title}</h2>
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};

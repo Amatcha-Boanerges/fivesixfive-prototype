@@ -1,12 +1,24 @@
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 
 export function HeroSection() {
+  const [index, setIndex] = useState(0);
+  const words = ["Tick.", "Stick.", "Work.", "Grow."];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Gradient Background */}
       <div className="absolute inset-0 gradient-hero animate-gradient opacity-95" />
-      
+
       {/* Floating Shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary-foreground/10 rounded-full blur-3xl animate-float" />
@@ -28,19 +40,27 @@ export function HeroSection() {
           {/* Main Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-primary-foreground mb-6 animate-slide-up leading-tight">
             We Make Your People
-            <span className="block mt-2">
-              <span className="relative">
-                Tick
-                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
-                  <path d="M2 10C50 2 150 2 198 10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="text-secondary" />
-                </svg>
-              </span>
-              .
+            <span className="block mt-2 h-[1.2em] relative overflow-visible">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={index}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -20, opacity: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="inline-block relative"
+                >
+                  {words[index]}
+                  <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
+                    <path d="M2 10C50 2 150 2 198 10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="text-secondary" />
+                  </svg>
+                </motion.span>
+              </AnimatePresence>
             </span>
           </h1>
 
           {/* Subheadline */}
-          <p 
+          <p
             className="text-lg md:text-xl text-primary-foreground/80 font-body max-w-2xl mx-auto mb-10 animate-slide-up"
             style={{ animationDelay: "0.1s" }}
           >
@@ -48,7 +68,7 @@ export function HeroSection() {
           </p>
 
           {/* CTA Buttons */}
-          <div 
+          <div
             className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
