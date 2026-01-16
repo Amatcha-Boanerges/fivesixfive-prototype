@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { NewsletterSection } from "@/components/home/NewsletterSection";
 import { Search, Filter, FileText, Layout, Download, ChevronRight } from "lucide-react";
 
 export default function Resources() {
@@ -143,28 +144,7 @@ export default function Resources() {
           </div>
         </section>
 
-        {/* Newsletter Signup */}
-        <section className="bg-white py-24">
-          <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-            <div className="rounded-2xl border-2 border-dashed border-border p-12 md:p-16">
-              <h2 className="mb-4 font-heading text-3xl text-foreground">Stay Aligned</h2>
-              <p className="mx-auto mb-10 max-w-md text-muted-foreground">
-                Get monthly insights on culture, leadership, and growth delivered straight to your inbox.
-              </p>
-              <form className="mx-auto flex max-w-lg flex-col gap-4 sm:flex-row">
-                <input
-                  type="email"
-                  placeholder="Work email address"
-                  className="flex-grow rounded-full border-none bg-background px-6 py-4 font-ui text-sm focus:ring-2 focus:ring-primary"
-                  required
-                />
-                <button className="rounded-full bg-primary px-8 py-4 font-ui font-bold text-white transition-all hover:shadow-xl">
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-        </section>
+        <NewsletterSection />
       </main>
       <Footer />
     </div>
