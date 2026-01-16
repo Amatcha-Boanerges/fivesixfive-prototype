@@ -78,9 +78,6 @@ export default function Contact() {
                 {/* Contact Info */}
                 <div className="space-y-12">
                   <div>
-                    <h2 className="font-heading text-5xl md:text-6xl mb-6 text-foreground">
-                      Let's start a <span className="text-primary italic">conversation</span>.
-                    </h2>
                     <p className="text-xl text-muted-foreground leading-relaxed">
                       Whether you're looking for a full cultural transformation or just some advice on organizational
                       design, our experts are here to help.
