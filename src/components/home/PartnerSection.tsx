@@ -7,11 +7,11 @@ export function PartnerSection() {
     "Finance",
   ];
 
-  // Duplicate partners for seamless loop
-  const duplicatedPartners = [...partners, ...partners];
+  // Repeat partners to avoid gaps in the ticker loop
+  const repeatedPartners = Array.from({ length: 3 }, () => partners).flat();
 
   return (
-    <section className="border-b border-border bg-background py-12 overflow-hidden">
+    <section className="bg-background py-12 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <p className="font-ui mb-8 text-center text-sm font-medium uppercase tracking-wider text-muted-foreground">
           Trusted by forward-thinking organizations
@@ -23,8 +23,8 @@ export function PartnerSection() {
           
           {/* Ticker container */}
           <div className="overflow-hidden">
-            <div className="flex items-center gap-8 md:gap-12 opacity-70 animate-ticker">
-              {duplicatedPartners.map((partner, index) => (
+            <div className="flex w-max flex-nowrap items-center gap-8 md:gap-12 opacity-70 animate-ticker">
+              {repeatedPartners.map((partner, index) => (
                 <span
                   key={`${partner}-${index}`}
                   className="font-heading text-lg font-semibold text-muted-foreground/60 transition-colors hover:text-muted-foreground whitespace-nowrap flex-shrink-0"
