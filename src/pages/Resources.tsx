@@ -61,39 +61,25 @@ export default function Resources() {
                 Resources
               </h1>
               <p className="text-xl text-primary-foreground/80 font-body">
-                Insights, guides, and tools to help you transform your organization.
+              Downloadable research, industry insights, guides, articles, real-world case studies and tools to help you transform your organization.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Resources Header */}
-        <section className="bg-white py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
-              <div className="max-w-xl">
-                <h1 className="font-heading text-5xl mb-4 text-foreground">Knowledge Base</h1>
-                <p className="text-muted-foreground">
-                  Downloadable research, industry insights, and real-world case studies from our team.
-                </p>
-              </div>
-              <div className="w-full md:w-auto">
-                <div className="relative">
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" size={18} />
-                  <input
-                    type="text"
-                    placeholder="Search insights..."
-                    className="w-full rounded-full border-transparent bg-background py-4 pl-12 pr-6 font-ui text-sm transition-all focus:border-secondary focus:ring-0 md:w-80"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Filter Bar */}
+        {/* Filter Bar with Search */}
         <section className="sticky top-[64px] z-40 border-b border-border bg-white/80 py-8 backdrop-blur-md">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-6">
+              <div className="relative max-w-2xl mx-auto">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" size={20} />
+                <input
+                  type="text"
+                  placeholder="Search insights..."
+                  className="w-full rounded-full border border-border bg-background py-4 pl-12 pr-6 font-ui text-sm transition-all focus:border-secondary focus:ring-2 focus:ring-secondary/20"
+                />
+              </div>
+            </div>
             <div className="no-scrollbar flex items-center space-x-4 overflow-x-auto pb-2 sm:pb-0">
               <Filter size={18} className="flex-shrink-0 text-muted-foreground" />
               {categories.map((category) => (
