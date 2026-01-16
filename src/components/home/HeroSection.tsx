@@ -27,7 +27,7 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="container relative z-10 mx-auto px-4 pt-20">
+      <div className="container relative z-10 mx-auto px-4 pt-20 pb-24 md:pb-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 mb-8 animate-fade-in">
@@ -82,7 +82,7 @@ export function HeroSection() {
             </Button>
           </div>
 
-          {/* Trust Indicators
+          {/* Trust Indicators */}
           <div 
             className="mt-16 pt-8 border-t border-primary-foreground/10 animate-fade-in"
             style={{ animationDelay: "0.4s" }}
@@ -90,22 +90,27 @@ export function HeroSection() {
             <p className="text-primary-foreground/50 font-ui text-sm uppercase tracking-wider mb-6">
               Trusted by forward-thinking organizations
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-70">
-              {["Fortune 500", "Global NGOs", "Tech Startups", "Healthcare", "Finance"].map((partner) => (
-                <span
-                  key={partner}
-                  className="text-primary-foreground/60 font-heading font-semibold text-lg"
-                >
-                  {partner}
-                </span>
-              ))}
+            <div className="relative overflow-hidden">
+              {/* Ticker container */}
+              <div className="overflow-hidden">
+                <div className="flex w-max flex-nowrap items-center gap-8 md:gap-12 opacity-70 animate-ticker mx-auto">
+                  {Array.from({ length: 3 }, () => ["Fortune 500", "Global NGOs", "Tech Startups", "Healthcare", "Finance"]).flat().map((partner, index) => (
+                    <span
+                      key={`${partner}-${index}`}
+                      className="text-primary-foreground/60 font-heading font-semibold text-lg transition-colors hover:text-primary-foreground/80 whitespace-nowrap flex-shrink-0"
+                    >
+                      {partner}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center animate-bounce">
+      <div className="absolute bottom-4 md:bottom-8 left-0 right-0 flex justify-center items-center animate-bounce z-10">
         <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-2">
           <div className="w-1 h-2 rounded-full bg-primary-foreground/50 animate-pulse" />
         </div>
