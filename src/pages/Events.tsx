@@ -106,7 +106,7 @@ export default function Events() {
                 <div className="relative z-10 lg:w-1/3">
                   <div className="relative aspect-square">
                     <img
-                      src="https://picsum.photos/600/600?random=11"
+                      src="/pa-conf.jpg"
                       alt="Conference attendees"
                       className="h-full w-full rotate-3 rounded-2xl object-cover transition-transform duration-500 group-hover:rotate-0"
                     />
