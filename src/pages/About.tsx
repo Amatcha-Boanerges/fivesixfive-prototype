@@ -57,7 +57,7 @@ export default function About() {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6">
-                Partnering for Sustainable Growth
+                About Us
               </h1>
               <p className="text-xl text-primary-foreground/80 font-body">
                 We're a values-driven consultancy dedicated to helping organizations build thriving cultures, develop
@@ -118,9 +118,12 @@ export default function About() {
 
             <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {values.map((value) => (
-                <Card key={value.title} className="border-0 bg-card shadow-sm">
+                <Card
+                  key={value.title}
+                  className="group border-0 bg-card shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                >
                   <CardContent className="p-6 text-center">
-                    <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full gradient-bg">
+                    <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full gradient-bg transition-transform duration-300 group-hover:scale-110">
                       <value.icon className="h-7 w-7 text-white" />
                     </div>
                     <h3 className="font-heading text-lg font-semibold text-foreground">

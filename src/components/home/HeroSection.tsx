@@ -1,12 +1,24 @@
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 
 export function HeroSection() {
+  const [index, setIndex] = useState(0);
+  const words = ["Tick.", "Stick.", "Work.", "Grow."];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Gradient Background */}
       <div className="absolute inset-0 gradient-hero animate-gradient opacity-95" />
-      
+
       {/* Floating Shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary-foreground/10 rounded-full blur-3xl animate-float" />
@@ -15,7 +27,7 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="container relative z-10 mx-auto px-4 pt-20">
+      <div className="container relative z-10 mx-auto px-4 pt-20 pb-24 md:pb-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 mb-8 animate-fade-in">
@@ -28,19 +40,27 @@ export function HeroSection() {
           {/* Main Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-primary-foreground mb-6 animate-slide-up leading-tight">
             We Make Your People
-            <span className="block mt-2">
-              <span className="relative">
-                Tick
-                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
-                  <path d="M2 10C50 2 150 2 198 10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="text-secondary" />
-                </svg>
-              </span>
-              .
+            <span className="block mt-2 h-[1.2em] relative overflow-visible">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={index}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -20, opacity: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="inline-block relative"
+                >
+                  {words[index]}
+                  <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
+                    <path d="M2 10C50 2 150 2 198 10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="text-secondary" />
+                  </svg>
+                </motion.span>
+              </AnimatePresence>
             </span>
           </h1>
 
           {/* Subheadline */}
-          <p 
+          <p
             className="text-lg md:text-xl text-primary-foreground/80 font-body max-w-2xl mx-auto mb-10 animate-slide-up"
             style={{ animationDelay: "0.1s" }}
           >
@@ -48,7 +68,7 @@ export function HeroSection() {
           </p>
 
           {/* CTA Buttons */}
-          <div 
+          <div
             className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
@@ -62,7 +82,7 @@ export function HeroSection() {
             </Button>
           </div>
 
-          {/* Trust Indicators
+          {/* Trust Indicators */}
           <div 
             className="mt-16 pt-8 border-t border-primary-foreground/10 animate-fade-in"
             style={{ animationDelay: "0.4s" }}
@@ -70,22 +90,27 @@ export function HeroSection() {
             <p className="text-primary-foreground/50 font-ui text-sm uppercase tracking-wider mb-6">
               Trusted by forward-thinking organizations
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-70">
-              {["Fortune 500", "Global NGOs", "Tech Startups", "Healthcare", "Finance"].map((partner) => (
-                <span
-                  key={partner}
-                  className="text-primary-foreground/60 font-heading font-semibold text-lg"
-                >
-                  {partner}
-                </span>
-              ))}
+            <div className="relative overflow-hidden">
+              {/* Ticker container */}
+              <div className="overflow-hidden">
+                <div className="flex w-max flex-nowrap items-center gap-8 md:gap-12 opacity-70 animate-ticker mx-auto">
+                  {Array.from({ length: 3 }, () => ["Fortune 500", "Global NGOs", "Tech Startups", "Healthcare", "Finance"]).flat().map((partner, index) => (
+                    <span
+                      key={`${partner}-${index}`}
+                      className="text-primary-foreground/60 font-heading font-semibold text-lg transition-colors hover:text-primary-foreground/80 whitespace-nowrap flex-shrink-0"
+                    >
+                      {partner}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center animate-bounce">
+      <div className="absolute bottom-4 md:bottom-8 left-0 right-0 flex justify-center items-center animate-bounce z-10">
         <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-2">
           <div className="w-1 h-2 rounded-full bg-primary-foreground/50 animate-pulse" />
         </div>
