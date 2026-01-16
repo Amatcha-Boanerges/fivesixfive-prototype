@@ -63,6 +63,61 @@ export default function Events() {
           </div>
         </section>
 
+        {/* Featured Event */}
+        <section className="bg-background py-20">
+          <div className="container mx-auto px-4">
+            <div className="overflow-hidden rounded-2xl bg-gradient-primary p-1 text-primary-foreground shadow-elevated">
+              <div className="group relative flex flex-col items-center gap-12 overflow-hidden rounded-[22px] bg-foreground p-8 md:p-12 lg:flex-row">
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-10"
+                  style={{
+                    backgroundImage:
+                      "radial-gradient(circle at 2px 2px, rgba(255,255,255,0.8) 1px, transparent 0)",
+                    backgroundSize: "40px 40px",
+                  }}
+                />
+
+                <div className="relative z-10 flex-1">
+                  <span className="mb-6 inline-block rounded-full bg-primary px-4 py-1 text-xs font-bold uppercase tracking-widest text-primary-foreground">
+                    Upcoming Conference
+                  </span>
+                  <h2 className="mb-6 font-heading text-4xl font-semibold md:text-5xl">
+                    PA Annual Conference 2025
+                  </h2>
+                  <p className="mb-8 max-w-xl text-lg leading-relaxed text-primary-foreground/70">
+                    Join 500+ culture leaders and HR professionals for two days of inspiration, networking, and strategic
+                    development in the heart of London.
+                  </p>
+                  <div className="mb-10 flex flex-wrap gap-8 text-sm font-ui text-primary-foreground/70">
+                    <div className="flex items-center space-x-2">
+                      <Calendar size={18} className="text-secondary" />
+                      <span>March 14-15, 2025</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Users size={18} className="text-secondary" />
+                      <span>The Barbican, London</span>
+                    </div>
+                  </div>
+                  <Button size="lg" className="bg-white text-foreground hover:bg-secondary hover:text-white">
+                    Register Interest Now
+                  </Button>
+                </div>
+
+                <div className="relative z-10 lg:w-1/3">
+                  <div className="relative aspect-square">
+                    <img
+                      src="https://picsum.photos/600/600?random=11"
+                      alt="Conference attendees"
+                      className="h-full w-full rotate-3 rounded-2xl object-cover transition-transform duration-500 group-hover:rotate-0"
+                    />
+                    <div className="absolute inset-0 -z-10 -rotate-3 rounded-2xl border-4 border-primary transition-transform duration-500 group-hover:rotate-0" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Upcoming Events */}
         <section className="py-24 bg-background">
           <div className="container mx-auto px-4">
