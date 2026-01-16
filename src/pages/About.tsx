@@ -52,14 +52,14 @@ export default function About() {
       <Header />
 
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="bg-muted py-20 md:py-28">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="mx-auto max-w-3xl text-center animate-slide-up">
-              <h1 className="font-heading text-4xl font-semibold text-foreground md:text-5xl">
-                Partnering for <span className="gradient-text">Sustainable Growth</span>
+        {/* Hero */}
+        <section className="pt-32 pb-20 gradient-hero">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6">
+                About Us
               </h1>
-              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+              <p className="text-xl text-primary-foreground/80 font-body">
                 We're a values-driven consultancy dedicated to helping organizations build thriving cultures, develop
                 exceptional leaders, and achieve lasting success.
               </p>
