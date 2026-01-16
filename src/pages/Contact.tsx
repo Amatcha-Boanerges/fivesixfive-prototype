@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Clock, Send, Calendar } from "lucide-react";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, Clock, Send, Calendar, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
@@ -37,26 +35,19 @@ const contactInfo = [
 ];
 
 export default function Contact() {
-  const [formState, setFormState] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
-    company: "",
-    subject: "",
+    subject: "Consultation",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormState({ name: "", email: "", company: "", subject: "", message: "" });
+    // Simulate API call
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 5000);
   };
 
   return (
@@ -82,157 +73,184 @@ export default function Contact() {
         {/* Contact Form & Info */}
         <section className="bg-background py-20 md:py-28">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid gap-12 lg:grid-cols-2">
-              {/* Contact Form */}
-              <Card className="border-0 bg-card shadow-lg">
-                <CardContent className="p-8">
-                  <h2 className="font-heading text-2xl font-semibold text-foreground">
-                    Send Us a Message
-                  </h2>
-                  <p className="mt-2 text-muted-foreground">
-                    Fill out the form below and we'll get back to you within 24 hours.
-                  </p>
+            <div className="mx-auto max-w-7xl">
+              <div className="grid grid-cols-1 gap-20 lg:grid-cols-2 items-start">
+                {/* Contact Info */}
+                <div className="space-y-12">
+                  <div>
+                    <h2 className="font-heading text-5xl md:text-6xl mb-6 text-foreground">
+                      Let's start a <span className="text-primary italic">conversation</span>.
+                    </h2>
+                    <p className="text-xl text-muted-foreground leading-relaxed">
+                      Whether you're looking for a full cultural transformation or just some advice on organizational
+                      design, our experts are here to help.
+                    </p>
+                  </div>
 
-                  {isSubmitted ? (
-                    <div className="mt-8 rounded-lg bg-secondary/10 p-6 text-center">
-                      <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-secondary">
-                        <Send className="h-6 w-6 text-white" />
+                  <div className="space-y-8">
+                    <div className="flex items-start space-x-6 group">
+                      <div className="p-4 bg-white rounded-2xl text-primary group-hover:bg-primary group-hover:text-white transition-all shadow-sm">
+                        <Mail size={24} />
                       </div>
-                      <h3 className="font-heading text-lg font-semibold text-foreground">
-                        Message Sent!
-                      </h3>
-                      <p className="mt-2 text-muted-foreground">Thank you for reaching out. We'll be in touch soon.</p>
-                      <Button onClick={() => setIsSubmitted(false)} className="mt-4 bg-primary hover:bg-primary/90">
-                        Send Another Message
-                      </Button>
+                      <div>
+                        <h4 className="font-ui font-bold text-foreground">Email us</h4>
+                        <p className="text-muted-foreground">{contactInfo[0].value}</p>
+                      </div>
                     </div>
-                  ) : (
-                    <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-                      <div className="grid gap-6 sm:grid-cols-2">
-                        <div className="space-y-2">
-                          <Label htmlFor="name">Full Name</Label>
-                          <Input
-                            id="name"
-                            placeholder="John Smith"
-                            value={formState.name}
-                            onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                            required
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="email">Email Address</Label>
-                          <Input
-                            id="email"
-                            type="email"
-                            placeholder="john@company.com"
-                            value={formState.email}
-                            onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                            required
-                          />
-                        </div>
-                      </div>
 
-                      <div className="grid gap-6 sm:grid-cols-2">
+                    <div className="flex items-start space-x-6 group">
+                      <div className="p-4 bg-white rounded-2xl text-secondary group-hover:bg-secondary group-hover:text-white transition-all shadow-sm">
+                        <Phone size={24} />
+                      </div>
+                      <div>
+                        <h4 className="font-ui font-bold text-foreground">Call us</h4>
+                        <p className="text-muted-foreground">{contactInfo[1].value}</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start space-x-6 group">
+                      <div className="p-4 bg-white rounded-2xl text-primary group-hover:bg-primary group-hover:text-white transition-all shadow-sm">
+                        <MapPin size={24} />
+                      </div>
+                      <div>
+                        <h4 className="font-ui font-bold text-foreground">Visit us</h4>
+                        <p className="text-muted-foreground">{contactInfo[2].value}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Stats/Social Proof */}
+                  <div className="pt-8 grid grid-cols-2 gap-8">
+                    <div>
+                      <span className="block text-4xl font-heading text-primary">98%</span>
+                      <span className="text-xs font-ui text-muted-foreground uppercase tracking-widest">
+                        Client Satisfaction
+                      </span>
+                    </div>
+                    <div>
+                      <span className="block text-4xl font-heading text-secondary">150+</span>
+                      <span className="text-xs font-ui text-muted-foreground uppercase tracking-widest">
+                        Transformations
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Form */}
+                <div className="bg-white p-8 md:p-12 rounded-2xl shadow-2xl relative">
+                  <div className="absolute top-0 right-12 w-12 h-1 bg-primary rounded-full"></div>
+
+                  {submitted ? (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="text-center py-20"
+                    >
+                      <div className="w-20 h-20 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <Send size={40} />
+                      </div>
+                      <h3 className="text-2xl font-heading mb-2 text-foreground">Message Sent!</h3>
+                      <p className="text-muted-foreground">We'll get back to you within 24 business hours.</p>
+                    </motion.div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <Label htmlFor="company">Company</Label>
-                          <Input
-                            id="company"
-                            placeholder="Your Company"
-                            value={formState.company}
-                            onChange={(e) => setFormState({ ...formState, company: e.target.value })}
+                          <label className="text-sm font-ui font-semibold text-muted-foreground">Your Name</label>
+                          <input
+                            type="text"
+                            required
+                            className="w-full px-5 py-3 bg-muted border-transparent rounded-lg focus:bg-white focus:border-primary focus:ring-0 transition-all text-sm"
+                            value={formData.name}
+                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="subject">Subject</Label>
-                          <Input
-                            id="subject"
-                            placeholder="How can we help?"
-                            value={formState.subject}
-                            onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
+                          <label className="text-sm font-ui font-semibold text-muted-foreground">Work Email</label>
+                          <input
+                            type="email"
                             required
+                            className="w-full px-5 py-3 bg-muted border-transparent rounded-lg focus:bg-white focus:border-primary focus:ring-0 transition-all text-sm"
+                            value={formData.email}
+                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           />
                         </div>
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="message">Message</Label>
-                        <Textarea
-                          id="message"
-                          placeholder="Tell us about your needs..."
-                          rows={5}
-                          value={formState.message}
-                          onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                          required
-                        />
+                        <label className="text-sm font-ui font-semibold text-muted-foreground">
+                          What can we help with?
+                        </label>
+                        <div className="relative">
+                          <select
+                            className="w-full px-5 py-3 bg-muted border-transparent rounded-lg focus:bg-white focus:border-primary focus:ring-0 transition-all text-sm appearance-none cursor-pointer"
+                            value={formData.subject}
+                            onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                          >
+                            <option>Consultation</option>
+                            <option>Culture Audit</option>
+                            <option>Learning & Development</option>
+                            <option>General Enquiry</option>
+                          </select>
+                          <ChevronDown
+                            size={18}
+                            className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none"
+                          />
+                        </div>
                       </div>
 
-                      <Button type="submit" className="w-full bg-primary hover:bg-primary/90" disabled={isSubmitting}>
-                        {isSubmitting ? (
-                          "Sending..."
-                        ) : (
-                          <>
-                            Send Message
-                            <Send className="ml-2 h-4 w-4" />
-                          </>
-                        )}
-                      </Button>
+                      <div className="space-y-2">
+                        <label className="text-sm font-ui font-semibold text-muted-foreground">Your Message</label>
+                        <textarea
+                          rows={5}
+                          required
+                          className="w-full px-5 py-3 bg-muted border-transparent rounded-lg focus:bg-white focus:border-primary focus:ring-0 transition-all text-sm resize-none"
+                          value={formData.message}
+                          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        ></textarea>
+                      </div>
+
+                      <div className="flex items-center space-x-2 text-xs text-muted-foreground mb-6">
+                        <input
+                          type="checkbox"
+                          required
+                          className="rounded border-border text-primary focus:ring-primary"
+                        />
+                        <span>I agree to the privacy policy and data processing terms.</span>
+                      </div>
+
+                      <button
+                        type="submit"
+                        className="w-full py-4 bg-primary text-white rounded-full font-ui font-bold hover:shadow-2xl hover:-translate-y-0.5 transition-all flex items-center justify-center space-x-2"
+                      >
+                        <span>Send Message</span>
+                        <Send size={18} />
+                      </button>
                     </form>
                   )}
-                </CardContent>
-              </Card>
-
-              {/* Contact Info */}
-              <div className="space-y-8">
-                <div>
-                  <h2 className="font-heading text-2xl font-semibold text-foreground">
-                    Contact Information
-                  </h2>
-                  <p className="mt-2 text-muted-foreground">
-                    Prefer to reach out directly? Here's how you can contact us.
-                  </p>
                 </div>
+              </div>
 
-                <div className="space-y-4">
-                  {contactInfo.map((info) => (
-                    <Card key={info.label} className="border-0 bg-muted shadow-sm">
-                      <CardContent className="flex items-start gap-4 p-6">
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-secondary/10">
-                          <info.icon className="h-6 w-6 text-secondary" />
+              {/* Schedule a Consultation CTA - Full Width */}
+              <div className="mt-16 lg:col-span-2">
+                <Card className="overflow-hidden border-0 gradient-bg">
+                  <CardContent className="p-8 md:p-12 text-white">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                      <div className="flex items-center gap-6">
+                        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white/20">
+                          <Calendar className="h-8 w-8" />
                         </div>
                         <div>
-                          <p className="font-ui text-sm font-medium text-muted-foreground">
-                            {info.label}
+                          <h3 className="font-heading text-2xl md:text-3xl font-semibold">Schedule a Consultation</h3>
+                          <p className="text-base text-white/80 mt-2">
+                            Book a free 30-minute discovery call with our team to discuss your organizational needs.
                           </p>
-                          {info.href !== "#" ? (
-                            <a href={info.href} className="mt-1 text-foreground hover:text-primary">
-                              {info.value}
-                            </a>
-                          ) : (
-                            <p className="mt-1 text-foreground">{info.value}</p>
-                          )}
                         </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-
-                {/* Book Consultation CTA */}
-                <Card className="overflow-hidden border-0 gradient-bg">
-                  <CardContent className="p-6 text-white">
-                    <div className="flex items-center gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/20">
-                        <Calendar className="h-6 w-6" />
                       </div>
-                      <div>
-                        <h3 className="font-heading text-lg font-semibold">
-                          Schedule a Consultation
-                        </h3>
-                        <p className="text-sm text-white/80">Book a free 30-minute discovery call with our team.</p>
-                      </div>
+                      <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 whitespace-nowrap">
+                        <Link to="#">Book Now</Link>
+                      </Button>
                     </div>
-                    <Button asChild className="mt-4 w-full bg-white text-primary hover:bg-white/90">
-                      <Link to="#">Book Now</Link>
-                    </Button>
                   </CardContent>
                 </Card>
               </div>
