@@ -62,7 +62,7 @@ export function NewsletterSection() {
                   <p className="text-sm text-primary-foreground/80 mt-1 font-body">We've sent a confirmation link your way.</p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="relative group max-w-lg mx-auto">
+                <form onSubmit={handleSubmit} className="group max-w-lg mx-auto flex flex-col md:flex-row gap-4">
                   <Input
                     type="email"
                     required
@@ -70,12 +70,12 @@ export function NewsletterSection() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     disabled={status === "loading"}
-                    className="w-full bg-primary-foreground text-foreground px-6 py-4 sm:py-5 rounded-2xl outline-none focus:ring-4 focus:ring-primary/50 transition-all placeholder:text-muted-foreground font-body h-auto pr-32 md:pr-36"
+                    className="w-full md:flex-1 bg-primary-foreground text-foreground px-6 py-4 sm:py-5 rounded-2xl outline-none focus:ring-4 focus:ring-primary/50 transition-all placeholder:text-muted-foreground font-body h-auto"
                   />
                   <Button
                     type="submit"
                     disabled={status === "loading"}
-                    className="mt-4 md:mt-0 md:absolute md:right-2 md:top-2 md:bottom-2 h-auto"
+                    className="h-auto md:self-stretch"
                   >
                     {status === "loading" ? "Joining..." : "Subscribe"}
                     {status !== "loading" && <ArrowRight size={18} className="ml-2" />}
