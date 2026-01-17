@@ -59,13 +59,13 @@ export function HeroSection() {
             </span>
           </h1>
 
-          {/* Subheadline */}
+          {/* Subheadline
           <p
             className="text-base sm:text-lg md:text-xl text-primary-foreground/80 font-body max-w-2xl mx-auto mb-6 sm:mb-8 animate-slide-up"
             style={{ animationDelay: "0.1s" }}
           >
             We make your company work. Partner with us for values-driven organizational development that transforms culture and drives sustainable growth.
-          </p>
+          </p> */}
 
           {/* CTA Buttons */}
           <div
