@@ -37,12 +37,13 @@ export function ServicesSection() {
     offset: ["start start", "end end"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+  // Stop when HR Services (4th card) reaches center of viewport
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
 
   return (
     <>
       {/* Desktop/Tablet Horizontal Scroll */}
-      <section ref={containerRef} className="hidden lg:block relative h-[300vh] bg-background">
+      <section ref={containerRef} className="hidden lg:block relative h-[200vh] bg-background">
         <div className="sticky top-0 h-screen overflow-hidden flex flex-col py-24">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-ui text-sm font-medium mb-4">
