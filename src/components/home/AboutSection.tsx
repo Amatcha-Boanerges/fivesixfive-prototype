@@ -10,9 +10,9 @@ const values = [
 
 export function AboutSection() {
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-16 sm:py-20 lg:py-24 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Image Side */}
           <div className="relative">
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-elevated">
@@ -26,7 +26,7 @@ export function AboutSection() {
             </div>
             
             {/* Floating Stats Card */}
-            <div className="absolute -bottom-6 -right-6 bg-card rounded-2xl shadow-card p-6 border border-border">
+            <div className="static mt-6 sm:absolute sm:-bottom-6 sm:-right-6 bg-card rounded-2xl shadow-card p-5 sm:p-6 border border-border">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
                   <span className="text-secondary font-heading font-bold text-xl">✓</span>

@@ -22,9 +22,9 @@ export function NewsletterSection() {
   };
 
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <div className="relative gradient-hero rounded-[2rem] p-8 md:p-16 overflow-hidden">
+        <div className="relative gradient-hero rounded-[2rem] p-6 sm:p-8 md:p-12 lg:p-16 overflow-hidden">
 
           {/* Background Decorative Element */}
           <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-primary-foreground/10 rounded-full blur-3xl" />
@@ -70,7 +70,7 @@ export function NewsletterSection() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     disabled={status === "loading"}
-                    className="w-full bg-primary-foreground text-foreground px-6 py-5 rounded-2xl outline-none focus:ring-4 focus:ring-primary/50 transition-all placeholder:text-muted-foreground font-body h-auto pr-32 md:pr-36"
+                    className="w-full bg-primary-foreground text-foreground px-6 py-4 sm:py-5 rounded-2xl outline-none focus:ring-4 focus:ring-primary/50 transition-all placeholder:text-muted-foreground font-body h-auto pr-32 md:pr-36"
                   />
                   <Button
                     type="submit"
