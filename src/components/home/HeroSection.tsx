@@ -15,7 +15,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen-safe flex items-center justify-center overflow-hidden">
       {/* Animated Gradient Background */}
       <div className="absolute inset-0 gradient-hero animate-gradient opacity-95" />
 
@@ -27,7 +27,7 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="container relative z-10 mx-auto px-4 pt-14 pb-10 sm:pt-16 sm:pb-12 md:pt-20 md:pb-20">
+      <div className="container relative z-10 mx-auto px-4 pt-32 pb-10 sm:pt-32 sm:pb-12 md:pt-32 md:pb-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 mb-6 sm:mb-8 animate-fade-in">
