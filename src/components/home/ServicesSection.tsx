@@ -43,7 +43,7 @@ export function ServicesSection() {
     <>
       {/* Desktop/Tablet Horizontal Scroll */}
       <section ref={containerRef} className="hidden lg:block relative h-[300vh] bg-background">
-        <div className="sticky top-0 h-screen overflow-hidden flex flex-col py-24">
+        <div className="sticky top-0 h-screen-safe overflow-hidden flex flex-col py-24">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-ui text-sm font-medium mb-4">
               Our Services

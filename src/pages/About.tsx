@@ -210,7 +210,7 @@ export default function About() {
 
           <div className="container relative z-10 mx-auto px-4 text-center">
 
-            <h2 className="mx-auto max-w-5xl font-heading text-[4rem] font-bold leading-[1.1] text-white mb-10 tracking-tight">
+            <h2 className="mx-auto max-w-5xl font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4rem] font-bold leading-[1.1] text-white mb-6 sm:mb-8 md:mb-10 tracking-tight">
               Let's <span className="text-secondary">Work</span> Together
             </h2>
 

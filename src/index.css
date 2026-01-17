@@ -103,13 +103,46 @@
 }
 
 @layer base {
+  /* Box-sizing reset for consistent sizing */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   * {
     @apply border-border;
+  }
+
+  html {
+    /* Prevent horizontal scroll and ensure smooth scrolling */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
   }
 
   body {
     @apply bg-background text-foreground font-body antialiased;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    /* Text rendering optimization */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Prevent long text from breaking layouts */
+  p, li, span, a {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  /* Responsive images by default */
+  img, video, svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 
   h1, h2, h3 {
@@ -168,6 +201,17 @@
 
   .shadow-elevated {
     box-shadow: var(--shadow-elevated);
+  }
+
+  /* Safe viewport height for mobile (accounts for address bar) */
+  .min-h-screen-safe {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .h-screen-safe {
+    height: 100vh;
+    height: 100dvh;
   }
 
   /* Smooth animations */
