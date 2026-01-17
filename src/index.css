@@ -115,8 +115,6 @@
   }
 
   html {
-    /* Prevent horizontal scroll and ensure smooth scrolling */
-    overflow-x: hidden;
     scroll-behavior: smooth;
   }
 
@@ -126,7 +124,6 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden;
     /* Text rendering optimization */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
