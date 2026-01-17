@@ -173,22 +173,63 @@ export default function About() {
         </section>
 
         {/* CTA Section */}
-        <section className="gradient-bg py-20">
-          <div className="container mx-auto px-4 text-center md:px-6">
-            <h2 className="font-heading text-3xl font-semibold text-white md:text-4xl">
-              Let's Work Together
+        <section className="relative overflow-hidden gradient-hero py-32">
+          {/* Floating Images - Hidden on mobile/tablet, visible on large screens */}
+          <div className="absolute inset-0 max-w-[1400px] mx-auto pointer-events-none hidden xl:block">
+            {/* Left Side */}
+            <div className="absolute top-16 left-8 w-40 h-52 rounded-2xl overflow-hidden shadow-2xl rotate-[-6deg] opacity-80 border-4 border-white/5">
+              <img src="/team-light.jpg" alt="Team member" className="w-full h-full object-cover desaturate-[0.2]" />
+            </div>
+            <div className="absolute bottom-24 left-12 w-48 h-40 rounded-2xl overflow-hidden shadow-2xl rotate-3 opacity-90 border-4 border-white/5">
+              <img src="/managing-partner-1.jpg" alt="Working" className="w-full h-full object-cover desaturate-[0.2]" />
+            </div>
+
+            {/* Right Side */}
+            <div className="absolute top-12 right-12 w-40 h-40 rounded-2xl overflow-hidden shadow-2xl rotate-6 opacity-80 border-4 border-white/5">
+              <img
+                src="https://picsum.photos/800/800?random=12"
+                alt="Team"
+                className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all"
+              />
+            </div>
+            <div className="absolute top-1/2 -translate-y-1/2 right-4 w-32 h-48 rounded-2xl overflow-hidden shadow-2xl rotate-[-3deg] opacity-70 border-4 border-white/5">
+              <img
+                src="https://picsum.photos/800/800?random=13"
+                alt="Office"
+                className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all"
+              />
+            </div>
+            <div className="absolute bottom-8 right-24 w-44 h-44 rounded-2xl overflow-hidden shadow-2xl rotate-3 opacity-90 border-4 border-white/5">
+              <img
+                src="https://picsum.photos/800/800?random=14"
+                alt="Meeting"
+                className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all"
+              />
+            </div>
+          </div>
+
+          <div className="container relative z-10 mx-auto px-4 text-center">
+
+            <h2 className="mx-auto max-w-5xl font-heading text-[4rem] font-bold leading-[1.1] text-white mb-10 tracking-tight">
+              Let's <span className="text-secondary">Work</span> Together
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
-              Ready to explore how we can help your organization thrive? We'd love to hear from you.
+
+            <p className="mx-auto max-w-2xl text-lg md:text-xl text-white/60 mb-14 font-light leading-relaxed">
+              Ready to explore how we can help your organization thrive?<br className="hidden md:block" />
+              We'd love to hear from you.
             </p>
-            <Button asChild size="lg" className="mt-8 bg-white text-primary hover:bg-white/90">
-              <Link to="/contact">
-                Get in Touch
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+
+            <Link to="/contact">
+              <div className="inline-flex items-center gap-4 pl-8 pr-2 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full hover:bg-white/10 transition-all group cursor-pointer shadow-2xl shadow-primary/20">
+                <span className="font-semibold text-white text-lg tracking-wide">Get in Touch</span>
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+                  <ArrowRight className="w-6 h-6" />
+                </div>
+              </div>
+            </Link>
           </div>
         </section>
+
       </main>
 
       <Footer />
