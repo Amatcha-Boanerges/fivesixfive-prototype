@@ -59,17 +59,17 @@ export function HeroSection() {
             </span>
           </h1>
 
-          {/* Subheadline
+          {/* Subheadline */}
           <p
-            className="text-base sm:text-lg md:text-xl text-primary-foreground/80 font-body max-w-2xl mx-auto mb-6 sm:mb-8 animate-slide-up"
+            className="hidden sm:block mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-primary-foreground/80 font-body max-w-2xl mx-auto mb-6 sm:mb-8 animate-slide-up"
             style={{ animationDelay: "0.1s" }}
           >
             We make your company work. Partner with us for values-driven organizational development that transforms culture and drives sustainable growth.
-          </p> */}
+          </p>
 
           {/* CTA Buttons */}
           <div
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-slide-up"
+            className="mt-10 sm:mt-12 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
             <Button variant="hero" size="xl">
@@ -106,13 +106,13 @@ export function HeroSection() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-4 md:bottom-8 left-0 right-0 flex justify-center items-center animate-bounce z-10">
-        <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-2">
-          <div className="w-1 h-2 rounded-full bg-primary-foreground/50 animate-pulse" />
+          {/* Scroll Indicator */}
+          <div className="mt-8 sm:mt-10 md:mt-12 flex justify-center items-center animate-bounce">
+            <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-2">
+              <div className="w-1 h-2 rounded-full bg-primary-foreground/50 animate-pulse" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
