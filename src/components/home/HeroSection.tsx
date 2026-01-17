@@ -27,10 +27,10 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="container relative z-10 mx-auto px-4 pt-20 pb-24 md:pb-20">
+      <div className="container relative z-10 mx-auto px-4 pt-14 pb-10 sm:pt-16 sm:pb-12 md:pt-20 md:pb-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 mb-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 mb-6 sm:mb-8 animate-fade-in">
             <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
             <span className="text-primary-foreground/90 font-ui text-sm">
               Strategic Partner for Organizational Growth
@@ -38,7 +38,7 @@ export function HeroSection() {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-primary-foreground mb-6 animate-slide-up leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-heading font-bold text-primary-foreground mb-4 sm:mb-5 animate-slide-up leading-tight">
             We Make Your People
             <span className="block mt-2 h-[1.2em] relative overflow-visible">
               <AnimatePresence mode="wait">
@@ -61,7 +61,7 @@ export function HeroSection() {
 
           {/* Subheadline */}
           <p
-            className="text-lg md:text-xl text-primary-foreground/80 font-body max-w-2xl mx-auto mb-10 animate-slide-up"
+            className="text-base sm:text-lg md:text-xl text-primary-foreground/80 font-body max-w-2xl mx-auto mb-6 sm:mb-8 animate-slide-up"
             style={{ animationDelay: "0.1s" }}
           >
             We make your company work. Partner with us for values-driven organizational development that transforms culture and drives sustainable growth.
@@ -69,7 +69,7 @@ export function HeroSection() {
 
           {/* CTA Buttons */}
           <div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
             <Button variant="hero" size="xl">
@@ -84,7 +84,7 @@ export function HeroSection() {
 
           {/* Trust Indicators */}
           <div 
-            className="mt-16 pt-8 border-t border-primary-foreground/10 animate-fade-in"
+            className="mt-8 sm:mt-10 md:mt-12 pt-4 sm:pt-6 border-t border-primary-foreground/10 animate-fade-in"
             style={{ animationDelay: "0.4s" }}
           >
             <p className="text-primary-foreground/50 font-ui text-sm uppercase tracking-wider mb-6">
