@@ -52,7 +52,7 @@ export function EventsSection() {
   return (
     <section ref={containerRef} className="relative bg-background">
       {/* Sticky wrapper with smooth animations */}
-      <div className="sticky top-24 min-h-screen flex items-start py-24">
+      <div className="lg:sticky lg:top-24 lg:min-h-screen flex items-start py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4 w-full">
           {/* Section Header */}
           <div className="max-w-3xl mx-auto text-center mb-16">
