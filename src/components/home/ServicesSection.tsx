@@ -43,7 +43,7 @@ export function ServicesSection() {
     <>
       {/* Desktop/Tablet Horizontal Scroll */}
       <section ref={containerRef} className="hidden lg:block relative h-[300vh] bg-background">
-        <div className="sticky top-0 h-screen-safe overflow-hidden flex flex-col py-24">
+        <div className="sticky top-0 h-screen overflow-hidden flex flex-col py-24">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-ui text-sm font-medium mb-4">
               Our Services
@@ -98,9 +98,9 @@ export function ServicesSection() {
       </section>
 
       {/* Mobile Vertical Stack */}
-      <section className="lg:hidden py-16 sm:py-20 bg-background">
+      <section className="lg:hidden py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="mb-8 sm:mb-12">
+          <div className="mb-12">
             <h2 className="text-3xl font-heading font-bold text-foreground mb-4">
               Strategic Solutions for <span className="gradient-text">Lasting Impact</span>
             </h2>
@@ -111,7 +111,7 @@ export function ServicesSection() {
 
           <div className="space-y-6">
             {services.map((service) => (
-              <div key={service.title} className="p-5 sm:p-6 rounded-2xl bg-card border border-border shadow-sm">
+              <div key={service.title} className="p-6 rounded-2xl bg-card border border-border shadow-sm">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${service.color === "primary" ? "bg-primary/10 text-primary" : "bg-secondary/10 text-secondary"
                   }`}>
                   <service.icon size={24} />
