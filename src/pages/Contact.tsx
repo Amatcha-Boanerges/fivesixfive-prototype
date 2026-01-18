@@ -11,8 +11,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "maame.gaisey@fivesixfive.co",
-    href: "mailto:maame.gaisey@fivesixfive.co",
+    value: "values@fivesixfive.co",
+    href: "mailto:values@fivesixfive.co",
   },
   {
     icon: Phone,

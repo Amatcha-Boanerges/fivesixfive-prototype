@@ -1,31 +1,31 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Lightbulb, GraduationCap, Briefcase } from "lucide-react";
+import { ArrowRight, Users, Briefcase, Monitor, CalendarDays } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const services = [
   {
     icon: Users,
-    title: "Organisational Culture Transformation",
-    description: "Build a values-driven culture that empowers your people and drives business success. We help you define, embed, and sustain the culture you need.",
-    color: "primary",
-  },
-  {
-    icon: Lightbulb,
-    title: "Organizational Development",
-    description: "Strategic consulting to align your structure, processes, and people. Create an agile organization ready for tomorrow's challenges.",
-    color: "secondary",
-  },
-  {
-    icon: GraduationCap,
-    title: "Learning & Development",
-    description: "Custom learning journeys that develop leaders and build capabilities. From executive coaching to team workshops that create lasting change.",
+    title: "People and Organizations",
+    description: "Empowering your greatest asset through structural and cultural excellence. We help you move from a collection of individuals to a high-performing ecosystem.",
     color: "primary",
   },
   {
     icon: Briefcase,
-    title: "HR Services",
-    description: "End-to-end HR solutions from talent acquisition to performance management. Build HR practices that attract, develop, and retain top talent.",
+    title: "Business Capabilities",
+    description: "Hard-hitting strategic support for growth and operational stability. Specialized expertise to ensure your operations are lean and your strategy is fit-for-purpose.",
+    color: "secondary",
+  },
+  {
+    icon: Monitor,
+    title: "Technology",
+    description: "Building the digital backbone of your enterprise. We ensure your digital infrastructure is secure, integrated, and scalable.",
+    color: "primary",
+  },
+  {
+    icon: CalendarDays,
+    title: "Conferences",
+    description: "Curating industry intelligence and high-level networking. Our conferences bring together the brightest minds to solve the industry's most pressing challenges.",
     color: "secondary",
   },
 ];
