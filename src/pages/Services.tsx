@@ -7,32 +7,36 @@ import { Footer } from "@/components/layout/Footer";
 const Services: React.FC = () => {
   const offerings = [
     {
-      id: "culture",
-      title: "Organisational Culture Transformation",
-      desc: "Deep-rooted cultural change that aligns with your strategic goals.",
-      features: ["Culture Audits", "Value Discovery", "Behavioral Mapping", "Leadership Alignment"],
+      id: "people",
+      title: "People and Organizations",
+      desc: "Empowering your greatest asset through structural and cultural excellence. We help you move from a collection of individuals to a high-performing ecosystem by having deeper conversations about values and why they are the core of growth you seek.",
+      features: ["Organizational Culture Transformation", "Organizational Development", "Learning and Development", "Managed HR Services"],
       color: "border-primary",
+      image: "/diverse-business-team-collaboration-meeting.jpg",
     },
     {
-      id: "od",
-      title: "Organizational Development",
-      desc: "Optimizing structure, systems, and processes for peak performance.",
-      features: ["Structural Review", "Change Management", "Operating Model Design", "Strategic Planning"],
+      id: "business",
+      title: "Business Capabilities",
+      desc: "Hard-hitting strategic support for growth and operational stability. Whether you are entering a new market or optimizing your back office, we provide the specialized expertise to ensure your operations are lean and your strategy is fit-for-purpose.",
+      features: ["Business Strategy", "Market Entry Support", "M&A Advisory", "Facilitated Sessions"],
       color: "border-secondary",
+      image: "/professional-business-consulting-team-in-modern-of.jpg",
     },
     {
-      id: "ld",
-      title: "Learning and Development",
-      desc: "Custom training programs designed for the modern hybrid workplace.",
-      features: ["Soft Skills Training", "Technical Upskilling", "Learning Paths", "Digital Literacy"],
+      id: "technology",
+      title: "Technology",
+      desc: "Building the digital backbone of your enterprise. Technology should be an accelerator, not a bottleneck. We ensure your digital infrastructure is secure, integrated, and scalable.",
+      features: ["IT Audits", "Web Development", "IT Integrations", "Systems Security"],
       color: "border-primary",
+      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
     },
     {
-      id: "hr",
-      title: "HR Services",
-      desc: "End-to-end human resource solutions that support business scale.",
-      features: ["Talent Acquisition", "Retention Strategy", "Policy Development", "Employee Wellbeing"],
+      id: "conferences",
+      title: "Conferences",
+      desc: "Curating industry intelligence and high-level networking. Knowledge is the ultimate competitive advantage. Our curated conferences bring together the brightest minds to solve the industry's most pressing challenges.",
+      features: ["PA Conference", "Sales Conference", "HR Conferences", "IT Conference"],
       color: "border-secondary",
+      image: "/pa-conf.jpg",
     },
   ];
 
@@ -67,11 +71,10 @@ const Services: React.FC = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6">
-                Our Core Expertise
+                The Fivesixfive Integrated Framework
               </h1>
               <p className="text-xl text-primary-foreground/80 font-body">
-                We provide a suite of services designed to address the complex human challenges of modern business.
-                From culture to compliance, we've got you aligned.
+                True business agility requires the synchronization of four critical pillars: People, Capability, Technology, and Knowledge Exchange. We don't just offer advice; we build the infrastructure for your sustained success.
               </p>
             </div>
           </div>
@@ -112,11 +115,11 @@ const Services: React.FC = () => {
                   </div>
                   <div className="lg:w-2/5 h-64 lg:h-auto bg-muted relative">
                     <img
-                      src={`https://picsum.photos/800/800?random=${i + 10}`}
+                      src={o.image}
                       alt={o.title}
-                      className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 transition-all"
+                      className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-tr from-foreground/10 to-transparent"></div>
                   </div>
                 </motion.div>
               ))}

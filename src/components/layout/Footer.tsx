@@ -106,9 +106,9 @@ export function Footer() {
         {/* Contact Bar */}
         <div className="mt-12 pt-8 border-t border-background/10">
           <div className="flex flex-wrap gap-8 text-sm text-background/70">
-            <a href="mailto:maame.gaisey@fivesixfive.co" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <a href="mailto:values@fivesixfive.co" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Mail size={16} />
-              maame.gaisey@fivesixfive.co
+              values@fivesixfive.co
             </a>
             <a href="tel:+233244054973" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Phone size={16} />
