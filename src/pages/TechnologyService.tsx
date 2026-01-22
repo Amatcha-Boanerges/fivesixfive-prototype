@@ -17,9 +17,8 @@ const SidebarItem = ({
 }) => (
     <Link
         to={href}
-        className={`group flex items-center justify-between py-5 px-6 border-b border-white/10 last:border-0 transition-all ${
-            active ? "bg-white/20" : "hover:bg-white/5"
-        }`}
+        className={`group flex items-center justify-between py-5 px-6 border-b border-white/10 last:border-0 transition-all ${active ? "bg-secondary" : "hover:bg-white/5"
+            }`}
     >
         <span className={`font-heading font-medium text-lg ${active ? "text-white" : "text-white/80"}`}>{label}</span>
         <ArrowUpRight
@@ -128,7 +127,7 @@ const TechnologyService = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                             {/* Sidebar */}
                             <div className="lg:col-span-4 space-y-8">
-                                <div className="bg-primary/95 rounded-2xl overflow-hidden p-0 sticky top-24 shadow-2xl border border-white/5">
+                                <div className="bg-primary/95 rounded-2xl overflow-hidden p-0 sticky top-24 shadow-2xl">
                                     <div className="space-y-0">
                                         <SidebarItem label="People and Organizations" href="/services/people-and-organizations" />
                                         <SidebarItem label="Business Capabilities" href="/services/business-capabilities" />

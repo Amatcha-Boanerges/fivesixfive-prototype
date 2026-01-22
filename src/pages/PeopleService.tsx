@@ -128,7 +128,7 @@ const PeopleService = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                             {/* Sidebar */}
                             <div className="lg:col-span-4 space-y-8">
-                                <div className="bg-primary/95 rounded-2xl overflow-hidden p-0 sticky top-24 shadow-2xl border border-white/5">
+                                <div className="bg-primary/95 rounded-2xl overflow-hidden p-0 sticky top-24 shadow-2xl">
                                     <div className="space-y-0">
                                         <SidebarItem label="People and Organizations" href="/services/people-and-organizations" active />
                                         <SidebarItem label="Business Capabilities" href="/services/business-capabilities" />
