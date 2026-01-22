@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, ArrowUpRight, ArrowLeft, ArrowRight, Star } from "lucide-react";
 import { Header } from "@/components/layout/Header";
@@ -108,10 +109,20 @@ const Services: React.FC = () => {
                       ))}
                     </div>
 
-                    <button className="flex items-center space-x-2 text-primary font-bold font-ui hover:translate-x-2 transition-transform">
-                      <span>Enquire about this service</span>
-                      <ArrowUpRight size={18} />
-                    </button>
+                    {o.id === "people" ? (
+                      <Link
+                        to="/services/people"
+                        className="flex items-center space-x-2 text-primary font-bold font-ui hover:translate-x-2 transition-transform inline-flex"
+                      >
+                        <span>Enquire about this service</span>
+                        <ArrowUpRight size={18} />
+                      </Link>
+                    ) : (
+                      <button className="flex items-center space-x-2 text-primary font-bold font-ui hover:translate-x-2 transition-transform">
+                        <span>Enquire about this service</span>
+                        <ArrowUpRight size={18} />
+                      </button>
+                    )}
                   </div>
                   <div className="lg:w-2/5 h-64 lg:h-auto bg-muted relative">
                     <img
