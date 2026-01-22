@@ -130,7 +130,6 @@ const BusinessService = () => {
                                 <div className="bg-primary/90 rounded-none p-0 sticky top-24">
                                     <div className="space-y-0 border-t border-white/20">
                                         <SidebarItem label="People and Organizations" href="/services/people" />
-                                        <SidebarItem label="Business Capabilities" active />
                                         <SidebarItem label="Technology" href="/services/technology" />
                                         <SidebarItem label="Conferences" href="/services/conferences" />
                                     </div>
