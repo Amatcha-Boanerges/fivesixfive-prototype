@@ -148,10 +148,10 @@ const ConferencesService = () => {
                                         Curating industry intelligence and high-level networking.
                                     </p>
                                     <p className="mb-6">
-                                        Knowledge is the ultimate competitive advantage. Our curated conferences bring together the brightest minds to solve the industry's most pressing challenges.
+                                        Knowledge is the ultimate competitive advantage. Our curated conferences bring together the brightest minds to solve the industry’s most pressing challenges.
                                     </p>
                                     <p>
-                                        We go beyond standard presentations to create environments where real conversations happen and lasting partnerships are forged.
+                                        Our conferences are not just speeches; they are masterclasses. We gather industry leaders to dissect trends, providing your team with the "intel" needed to stay ahead of the curve.
                                     </p>
                                 </div>
 
@@ -163,7 +163,7 @@ const ConferencesService = () => {
                                             1. PA Conference
                                         </h2>
                                         <p className="text-muted-foreground leading-relaxed">
-                                            The premier gathering for Administrative Professionals and Executive Assistants, focusing on strategic partnership and leadership in the modern office.
+                                            Elevating administrative excellence and executive support.
                                         </p>
                                     </div>
 
@@ -173,7 +173,7 @@ const ConferencesService = () => {
                                             2. Sales Conference
                                         </h2>
                                         <p className="text-muted-foreground leading-relaxed">
-                                            A high-octane event for sales leaders, covering advanced negotiation, pipeline management, and the latest in sales technology.
+                                            Driving revenue growth through modern methodology and networking.
                                         </p>
                                     </div>
 
@@ -183,7 +183,7 @@ const ConferencesService = () => {
                                             3. HR Conferences
                                         </h2>
                                         <p className="text-muted-foreground leading-relaxed">
-                                            Exploring the future of work, talent acquisition, and organizational development with the world's leading HR practitioners.
+                                            Navigating the future of work and talent management.
                                         </p>
                                     </div>
 
@@ -193,7 +193,7 @@ const ConferencesService = () => {
                                             4. IT Conference
                                         </h2>
                                         <p className="text-muted-foreground leading-relaxed">
-                                            Deep dives into digital transformation, cybersecurity, and enterprise architecture for IT decision-makers.
+                                            Exploring the cutting edge of digital transformation and security; one industry at a time.
                                         </p>
                                     </div>
                                 </div>
