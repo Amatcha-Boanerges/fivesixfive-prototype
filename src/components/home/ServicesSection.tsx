@@ -2,27 +2,32 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Briefcase, Monitor, CalendarDays } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
+    id: "people",
     icon: Users,
     title: "People and Organizations",
     description: "Empowering your greatest asset through structural and cultural excellence. We help you move from a collection of individuals to a high-performing ecosystem.",
     color: "primary",
   },
   {
+    id: "business",
     icon: Briefcase,
     title: "Business Capabilities",
     description: "Hard-hitting strategic support for growth and operational stability. Specialized expertise to ensure your operations are lean and your strategy is fit-for-purpose.",
     color: "secondary",
   },
   {
+    id: "technology",
     icon: Monitor,
     title: "Technology",
     description: "Building the digital backbone of your enterprise. We ensure your digital infrastructure is secure, integrated, and scalable.",
     color: "primary",
   },
   {
+    id: "conferences",
     icon: CalendarDays,
     title: "Conferences",
     description: "Curating industry intelligence and high-level networking. Our conferences bring together the brightest minds to solve the industry's most pressing challenges.",
@@ -59,8 +64,9 @@ export function ServicesSection() {
 
           <motion.div style={{ x }} className="flex gap-8 pl-[10vw] w-max">
             {services.map((service, index) => (
-              <div
+              <Link
                 key={service.title}
+                to={`/services/${service.id}`}
                 className="w-[350px] md:w-[450px] h-[400px] flex-shrink-0"
               >
                 <div className="group relative p-6 h-full rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-2xl flex flex-col justify-between">
@@ -92,7 +98,7 @@ export function ServicesSection() {
                       }`}
                   />
                 </div>
-              </div>
+              </Link>
             ))}
           </motion.div>
         </div>
@@ -112,7 +118,7 @@ export function ServicesSection() {
 
           <div className="space-y-6">
             {services.map((service) => (
-              <div key={service.title} className="p-6 rounded-2xl bg-card border border-border shadow-sm">
+              <Link to={`/services/${service.id}`} key={service.title} className="block p-6 rounded-2xl bg-card border border-border shadow-sm">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${service.color === "primary" ? "bg-primary/10 text-primary" : "bg-secondary/10 text-secondary"
                   }`}>
                   <service.icon size={24} />
@@ -122,7 +128,7 @@ export function ServicesSection() {
                 <div className="flex items-center gap-2 text-primary font-medium text-sm">
                   Learn more <ArrowRight size={16} />
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
