@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 
 const services = [
   {
-    id: "people",
+    id: "people-and-organizations",
     icon: Users,
     title: "People and Organizations",
     description: "Empowering your greatest asset through structural and cultural excellence. We help you move from a collection of individuals to a high-performing ecosystem.",
     color: "primary",
   },
   {
-    id: "business",
+    id: "business-capabilities",
     icon: Briefcase,
     title: "Business Capabilities",
     description: "Hard-hitting strategic support for growth and operational stability. Specialized expertise to ensure your operations are lean and your strategy is fit-for-purpose.",

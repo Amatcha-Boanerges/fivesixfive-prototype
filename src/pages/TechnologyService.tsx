@@ -128,8 +128,8 @@ const TechnologyService = () => {
                             <div className="lg:col-span-4 space-y-8">
                                 <div className="bg-primary/90 rounded-none p-0 sticky top-24">
                                     <div className="space-y-0 border-t border-white/20">
-                                        <SidebarItem label="People and Organizations" href="/services/people" />
-                                        <SidebarItem label="Business Capabilities" href="/services/business" />
+                                        <SidebarItem label="People and Organizations" href="/services/people-and-organizations" />
+                                        <SidebarItem label="Business Capabilities" href="/services/business-capabilities" />
                                         <SidebarItem label="Conferences" href="/services/conferences" />
                                     </div>
                                 </div>

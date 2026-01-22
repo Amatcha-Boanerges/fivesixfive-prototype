@@ -1,6 +1,6 @@
 export const offerings = [
     {
-        id: "people",
+        id: "people-and-organizations",
         title: "People and Organizations",
         desc: "Empowering your greatest asset through structural and cultural excellence. We help you move from a collection of individuals to a high-performing ecosystem by having deeper conversations about values and why they are the core of growth you seek.",
         features: ["Organizational Culture Transformation", "Organizational Development", "Learning and Development", "Managed HR Services"],
@@ -8,7 +8,7 @@ export const offerings = [
         image: "/diverse-business-team-collaboration-meeting.jpg",
     },
     {
-        id: "business",
+        id: "business-capabilities",
         title: "Business Capabilities",
         desc: "Hard-hitting strategic support for growth and operational stability. Whether you are entering a new market or optimizing your back office, we provide the specialized expertise to ensure your operations are lean and your strategy is fit-for-purpose.",
         features: ["Business Strategy", "Market Entry Support", "M&A Advisory", "Facilitated Sessions"],

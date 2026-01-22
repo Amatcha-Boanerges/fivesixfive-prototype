@@ -76,23 +76,13 @@ const Services: React.FC = () => {
                       ))}
                     </div>
 
-                    {o.id === "people" ? (
-                      <Link
-                        to="/services/people"
-                        className="flex items-center space-x-2 text-primary font-bold font-ui hover:translate-x-2 transition-transform inline-flex"
-                      >
-                        <span>Enquire about this service</span>
-                        <ArrowUpRight size={18} />
-                      </Link>
-                    ) : (
-                      <Link
-                        to={`/services/${o.id}`}
-                        className="flex items-center space-x-2 text-primary font-bold font-ui hover:translate-x-2 transition-transform inline-flex"
-                      >
-                        <span>Enquire about this service</span>
-                        <ArrowUpRight size={18} />
-                      </Link>
-                    )}
+                    <Link
+                      to={`/services/${o.id}`}
+                      className="flex items-center space-x-2 text-primary font-bold font-ui hover:translate-x-2 transition-transform inline-flex"
+                    >
+                      <span>Enquire about this service</span>
+                      <ArrowUpRight size={18} />
+                    </Link>
                   </div>
                   <div className="lg:w-2/5 h-64 lg:h-auto bg-muted relative">
                     <img
