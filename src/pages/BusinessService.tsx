@@ -154,10 +154,9 @@ const BusinessService = () => {
                                         Hard-hitting strategic support for growth and operational stability.
                                     </p>
                                     <p className="mb-6">
-                                        Whether you are entering a new market or optimizing your back office, we provide the specialized expertise to ensure your operations are lean and your strategy is fit-for-purpose.
-                                    </p>
-                                    <p>
-                                        Our approach combines rigorous analysis with practical implementation support, ensuring that strategic initiatives translate into tangible bottom-line results.
+                                        Whether you are entering a new market or optimizing your back office, these processes can put a strain on you
+                                        and your team and has the potential to derail your growth instead of enhancing it. We provide the specialized
+                                        expertise to ensure your operations are lean and your strategy is fit-for-purpose.
                                     </p>
                                 </div>
 
@@ -169,7 +168,7 @@ const BusinessService = () => {
                                             1. Business Strategy
                                         </h2>
                                         <p className="text-muted-foreground leading-relaxed">
-                                            We define clear pathways to competitive advantage. From <strong>corporate strategy</strong> to business unit planning, we help you make the hard choices that drive long-term value.
+                                            Long-term roadmap development to navigate the present and future of the industry you play in.
                                         </p>
                                     </div>
 
@@ -179,17 +178,19 @@ const BusinessService = () => {
                                             2. Market Entry Support
                                         </h2>
                                         <p className="text-muted-foreground leading-relaxed">
-                                            Expanding into new territories requires more than specific ambition. We provide <strong>market research, regulatory guidance,</strong> and <strong>go-to-market strategies</strong> to de-risk your expansion.
+                                            Reducing the risk of expansion with localized intelligence and structural setup.
                                         </p>
                                     </div>
 
                                     {/* Section 3 */}
                                     <div className="">
                                         <h2 className="text-2xl font-heading font-bold mb-4 text-foreground">
-                                            3. M&A Advisory
+                                            3. M&A (Mergers & Acquisitions)
                                         </h2>
                                         <p className="text-muted-foreground leading-relaxed">
-                                            We support you through the complexities of <strong>Mergers and Acquisitions</strong>. Our services include target screening, commercial due diligence, and post-merger integration to realize deal synergies.
+                                            Expert guidance through the complexities of due diligence and post-merger integration. We augment this with our
+                                            culture transformation to reduce the friction of 2 or more cultures clashing and reducing the impact of the
+                                            talents in the new integrated organisation.
                                         </p>
                                     </div>
 
@@ -199,7 +200,20 @@ const BusinessService = () => {
                                             4. Facilitated Sessions
                                         </h2>
                                         <p className="text-muted-foreground leading-relaxed">
-                                            Unlock the collective intelligence of your team. Our <strong>Facilitated Sessions</strong> are designed to solve critical problems, align stakeholders, and generate innovative solutions in a structured environment.
+                                            High-impact workshops designed to break deadlocks and generate team and stakeholder alignment. Facilitation is not
+                                            about talking; it is about aiding conversations that move teams and organisations towards a desired end. Our
+                                            facilitators provide effective facilitations that guide discussions and groom teams to deliver their best
+                                            individually and collectively.
+                                        </p>
+                                    </div>
+
+                                    {/* Section 5 */}
+                                    <div className="">
+                                        <h2 className="text-2xl font-heading font-bold mb-4 text-foreground">
+                                            5. 3rd Party Back Office Support
+                                        </h2>
+                                        <p className="text-muted-foreground leading-relaxed">
+                                            Streamlining and taking on the responsibility of your non-core functions so you can focus on your primary mission.
                                         </p>
                                     </div>
                                 </div>
