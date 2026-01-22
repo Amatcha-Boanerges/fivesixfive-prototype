@@ -11,6 +11,11 @@ import Events from "./pages/Events";
 import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import PeopleService from "./pages/PeopleService";
+import BusinessService from "./pages/BusinessService";
+import TechnologyService from "./pages/TechnologyService";
+import ConferencesService from "./pages/ConferencesService";
+import ServiceDetail from "./pages/ServiceDetail";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +38,11 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/people-and-organizations" element={<PeopleService />} />
+          <Route path="/services/business-capabilities" element={<BusinessService />} />
+          <Route path="/services/technology" element={<TechnologyService />} />
+          <Route path="/services/conferences" element={<ConferencesService />} />
+          <Route path="/services/:id" element={<ServiceDetail />} />
           <Route path="/events" element={<Events />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/contact" element={<Contact />} />
