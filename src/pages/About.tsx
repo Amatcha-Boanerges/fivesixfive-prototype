@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { ArrowRight, Heart, Target, Users, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -47,6 +48,28 @@ const team = [
 ];
 
 export default function About() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Handle hash scrolling when page loads with hash
+    if (location.hash) {
+      const hash = location.hash.substring(1); // Remove the #
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          const headerOffset = 100;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    }
+  }, [location.hash]);
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
@@ -138,7 +161,7 @@ export default function About() {
         </section>
 
         {/* Team Section */}
-        <section className="bg-background py-20 md:py-28">
+        <section id="team" className="bg-background py-20 md:py-28">
           <div className="container mx-auto px-4 md:px-6">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="font-heading text-3xl font-semibold text-foreground md:text-4xl">

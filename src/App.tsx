@@ -16,6 +16,7 @@ import BusinessService from "./pages/BusinessService";
 import TechnologyService from "./pages/TechnologyService";
 import ConferencesService from "./pages/ConferencesService";
 import ServiceDetail from "./pages/ServiceDetail";
+import ComingSoon from "./pages/ComingSoon";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/events" element={<Events />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/coming-soon" element={<ComingSoon />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

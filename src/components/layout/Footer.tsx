@@ -1,29 +1,70 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 import SocialIcons from "@/components/SocialIcons";
 
 const footerLinks = {
   company: [
     { label: "About Us", href: "/about" },
-    { label: "Our Team", href: "/about#team" },
-    { label: "Careers", href: "/careers" },
+    { label: "Our Team", href: "/about#team", isHash: true },
+    { label: "Careers", href: "/coming-soon" },
     { label: "Contact", href: "/contact" },
   ],
   services: [
-    { label: "Culture Transformation", href: "/services#culture" },
-    { label: "Organizational Development", href: "/services#org-dev" },
-    { label: "Learning & Development", href: "/services#learning" },
-    { label: "HR Services", href: "/services#hr" },
+    { label: "People and Organizations", href: "/services/people-and-organizations" },
+    { label: "Business Capabilities", href: "/services/business-capabilities" },
+    { label: "Technology", href: "/services/technology" },
+    { label: "Conferences", href: "/services/conferences" },
   ],
   resources: [
-    { label: "Blog", href: "/resources#blog" },
-    { label: "Webinars", href: "/events#webinars" },
-    { label: "Case Studies", href: "/resources#case-studies" },
-    { label: "Downloads", href: "/resources#downloads" },
+    { label: "Blog & Case Studies", href: "/resources#blog" },
+    { label: "Events & Webinars", href: "/events" },
   ],
 };
 
 export function Footer() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const [path, hash] = href.split('#');
+    
+    const scrollToTarget = () => {
+      if (hash) {
+        const element = document.getElementById(hash);
+        if (element) {
+          const headerOffset = 100;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      } else {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+    };
+
+    if (location.pathname === path) {
+      // If on same page, just scroll
+      scrollToTarget();
+    } else {
+      // If navigating, go to new page then scroll
+      if (hash) {
+        navigate(`${path}#${hash}`);
+      } else {
+        navigate(path);
+      }
+      // Small delay to ensure navigation/render completes
+      setTimeout(scrollToTarget, 100);
+    }
+  };
+
   return (
     <footer className="bg-foreground text-background">
       {/* Main Footer */}
@@ -55,12 +96,13 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
-                  <Link
-                    to={link.href}
-                    className="text-background/70 hover:text-primary text-sm font-ui transition-colors duration-200"
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleLinkClick(e, link.href)}
+                    className="text-background/70 hover:text-primary hover:-translate-y-0.5 text-sm font-ui transition-all duration-200 inline-block cursor-pointer"
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -73,12 +115,13 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.label}>
-                  <Link
-                    to={link.href}
-                    className="text-background/70 hover:text-primary text-sm font-ui transition-colors duration-200"
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleLinkClick(e, link.href)}
+                    className="text-background/70 hover:text-primary hover:-translate-y-0.5 text-sm font-ui transition-all duration-200 inline-block cursor-pointer"
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -91,12 +134,13 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.label}>
-                  <Link
-                    to={link.href}
-                    className="text-background/70 hover:text-primary text-sm font-ui transition-colors duration-200"
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleLinkClick(e, link.href)}
+                    className="text-background/70 hover:text-primary hover:-translate-y-0.5 text-sm font-ui transition-all duration-200 inline-block cursor-pointer"
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
