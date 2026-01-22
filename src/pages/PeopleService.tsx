@@ -17,12 +17,13 @@ const SidebarItem = ({
 }) => (
     <Link
         to={href}
-        className="group flex items-center justify-between py-5 px-6 border-b border-white/20 transition-all hover:bg-white/5"
+        className={`group flex items-center justify-between py-5 px-6 border-b border-white/10 last:border-0 transition-all ${active ? "bg-white/20" : "hover:bg-white/5"
+            }`}
     >
-        <span className="font-heading font-medium text-white/90 text-lg">{label}</span>
+        <span className={`font-heading font-medium text-lg ${active ? "text-white" : "text-white/80"}`}>{label}</span>
         <ArrowUpRight
             size={20}
-            className={`text-white transition-all duration-300 ${active ? "opacity-100 rotate-45" : "opacity-70 group-hover:opacity-100 group-hover:rotate-45"}`}
+            className={`text-white transition-all duration-300 ${active ? "opacity-100 rotate-45" : "opacity-40 group-hover:opacity-100 group-hover:rotate-45"}`}
         />
     </Link>
 );
@@ -127,14 +128,13 @@ const PeopleService = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                             {/* Sidebar */}
                             <div className="lg:col-span-4 space-y-8">
-                                <div className="bg-primary/90 rounded-none p-0 sticky top-24">
-                                    <div className="space-y-0 border-t border-white/20">
+                                <div className="bg-primary/95 rounded-2xl overflow-hidden p-0 sticky top-24 shadow-2xl border border-white/5">
+                                    <div className="space-y-0">
+                                        <SidebarItem label="People and Organizations" href="/services/people-and-organizations" active />
                                         <SidebarItem label="Business Capabilities" href="/services/business-capabilities" />
                                         <SidebarItem label="Technology" href="/services/technology" />
                                         <SidebarItem label="Conferences" href="/services/conferences" />
                                     </div>
-
-
                                 </div>
                             </div>
 
