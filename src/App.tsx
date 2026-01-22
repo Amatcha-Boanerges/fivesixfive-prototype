@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFound";
 import PeopleService from "./pages/PeopleService";
 import BusinessService from "./pages/BusinessService";
 import TechnologyService from "./pages/TechnologyService";
+import ConferencesService from "./pages/ConferencesService";
 import ServiceDetail from "./pages/ServiceDetail";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/services/people" element={<PeopleService />} />
           <Route path="/services/business" element={<BusinessService />} />
           <Route path="/services/technology" element={<TechnologyService />} />
+          <Route path="/services/conferences" element={<ConferencesService />} />
           <Route path="/services/:id" element={<ServiceDetail />} />
           <Route path="/events" element={<Events />} />
           <Route path="/resources" element={<Resources />} />
