@@ -17,7 +17,7 @@ const SidebarItem = ({
 }) => (
     <Link
         to={href}
-        className={`group flex items-center justify-between py-5 px-6 border-b border-white/10 last:border-0 transition-all ${active ? "bg-white/20" : "hover:bg-white/5"
+        className={`group flex items-center justify-between py-5 px-6 border-b border-white/10 last:border-0 transition-all ${active ? "bg-secondary" : "hover:bg-white/5"
             }`}
     >
         <span className={`font-heading font-medium text-lg ${active ? "text-white" : "text-white/80"}`}>{label}</span>
