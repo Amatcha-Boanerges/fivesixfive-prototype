@@ -152,10 +152,13 @@ const TechnologyService = () => {
                                         Building the digital backbone of your enterprise.
                                     </p>
                                     <p className="mb-6">
-                                        Technology should be an accelerator, not a bottleneck. We ensure your digital infrastructure is secure, integrated, and scalable, enabling you to move faster and more efficiently.
+                                        Technology should be an accelerator, not a bottleneck. Your stress about technology may not be due to the potency of what you have or do not have. It is from its fit in the bigger eco-system the technology is deployed in.
+                                    </p>
+                                    <p className="mb-6">
+                                        We ensure your digital infrastructure is secure, integrated, and scalable.
                                     </p>
                                     <p>
-                                        From auditing your current systems to developing custom web solutions, we act as your technology partner, ensuring every digital investment delivers returns.
+                                        We offer a deep-tissue scan of your tech stack to prevent data breaches and identify redundant software costs.
                                     </p>
                                 </div>
 
@@ -167,7 +170,7 @@ const TechnologyService = () => {
                                             1. IT Audits
                                         </h2>
                                         <p className="text-muted-foreground leading-relaxed">
-                                            Gain visibility into your current state. Our IT Audits uncover inefficiencies, security gaps, and opportunities for modernization, providing a solid foundation for improvement.
+                                            Comprehensive risk assessments to ensure compliance and identify performance gaps.
                                         </p>
                                     </div>
 
@@ -177,7 +180,7 @@ const TechnologyService = () => {
                                             2. Web Development
                                         </h2>
                                         <p className="text-muted-foreground leading-relaxed">
-                                            Your digital storefront matters. We build <strong>responsive, high-performance web applications</strong> that engage users and drive business goals, using the latest modern frameworks.
+                                            Crafting high-performance digital interfaces that drive engagement and conversions.
                                         </p>
                                     </div>
 
@@ -187,17 +190,7 @@ const TechnologyService = () => {
                                             3. IT Integrations
                                         </h2>
                                         <p className="text-muted-foreground leading-relaxed">
-                                            Silos kill productivity. We connect your disparate systems—CRM, ERP, and custom tools—into a <strong>unified ecosystem</strong> that ensures data flows freely and accurately across your organization.
-                                        </p>
-                                    </div>
-
-                                    {/* Section 4 */}
-                                    <div className="">
-                                        <h2 className="text-2xl font-heading font-bold mb-4 text-foreground">
-                                            4. Systems Security
-                                        </h2>
-                                        <p className="text-muted-foreground leading-relaxed">
-                                            Protect what matters most. Our security services include threat assessments, penetration testing, and the implementation of robust security protocols to safeguard your valuable data and reputation.
+                                            Connecting disparate systems to ensure a "single source of truth" across your organization.
                                         </p>
                                     </div>
                                 </div>
