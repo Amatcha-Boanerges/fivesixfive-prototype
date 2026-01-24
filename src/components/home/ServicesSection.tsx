@@ -3,37 +3,16 @@ import { ArrowRight, Users, Briefcase, Monitor, CalendarDays } from "lucide-reac
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { offerings } from "@/data/services";
 
-const services = [
-  {
-    id: "people-and-organizations",
-    icon: Users,
-    title: "People and Organizations",
-    description: "Empowering your greatest asset through structural and cultural excellence. We help you move from a collection of individuals to a high-performing ecosystem.",
-    color: "primary",
-  },
-  {
-    id: "business-capabilities",
-    icon: Briefcase,
-    title: "Business Capabilities",
-    description: "Hard-hitting strategic support for growth and operational stability. Specialized expertise to ensure your operations are lean and your strategy is fit-for-purpose.",
-    color: "secondary",
-  },
-  {
-    id: "technology",
-    icon: Monitor,
-    title: "Technology",
-    description: "Building the digital backbone of your enterprise. We ensure your digital infrastructure is secure, integrated, and scalable.",
-    color: "primary",
-  },
-  {
-    id: "conferences",
-    icon: CalendarDays,
-    title: "Conferences",
-    description: "Curating industry intelligence and high-level networking. Our conferences bring together the brightest minds to solve the industry's most pressing challenges.",
-    color: "secondary",
-  },
-];
+const services = offerings.map(offering => ({
+  ...offering,
+  icon: offering.id === "people-and-organizations" ? Users :
+    offering.id === "business-capabilities" ? Briefcase :
+      offering.id === "technology" ? Monitor : CalendarDays,
+  description: offering.desc,
+  color: offering.color.includes("primary") ? "primary" : "secondary"
+}));
 
 export function ServicesSection() {
   const containerRef = useRef<HTMLDivElement>(null);

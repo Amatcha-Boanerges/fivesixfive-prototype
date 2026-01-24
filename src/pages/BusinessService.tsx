@@ -5,6 +5,7 @@ import { ChevronDown, ArrowRight, CheckCircle2, ChevronRight, ArrowUpRight } fro
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { offerings } from "@/data/services";
 
 const SidebarItem = ({
     label,
@@ -143,7 +144,7 @@ const BusinessService = () => {
                                 {/* Main Image */}
                                 <div className="relative rounded-2xl overflow-hidden mb-12 shadow-lg aspect-video">
                                     <img
-                                        src="/professional-business-consulting-team-in-modern-of.jpg"
+                                        src={offerings.find(o => o.id === "business-capabilities")?.image || "/professional-business-consulting-team-in-modern-of.jpg"}
                                         alt="Business Strategy Meeting"
                                         className="w-full h-full object-cover"
                                     />

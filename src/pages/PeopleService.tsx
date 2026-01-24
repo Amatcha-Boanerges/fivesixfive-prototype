@@ -5,6 +5,7 @@ import { ChevronDown, ArrowRight, CheckCircle2, ChevronRight, ArrowUpRight } fro
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { offerings } from "@/data/services";
 
 const SidebarItem = ({
     label,
@@ -143,7 +144,7 @@ const PeopleService = () => {
                                 {/* Main Image */}
                                 <div className="relative rounded-2xl overflow-hidden mb-12 shadow-lg aspect-video">
                                     <img
-                                        src="/diverse-business-team-collaboration-meeting.jpg" // Using image from Services.tsx "People" section
+                                        src={offerings.find(o => o.id === "people-and-organizations")?.image || "/diverse-business-team-collaboration-meeting.jpg"}
                                         alt="Strategic Meeting"
                                         className="w-full h-full object-cover"
                                     />

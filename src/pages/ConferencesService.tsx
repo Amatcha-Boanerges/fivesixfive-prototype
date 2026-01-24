@@ -5,6 +5,7 @@ import { ChevronDown, ArrowRight, CheckCircle2, ChevronRight, ArrowUpRight } fro
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { offerings } from "@/data/services";
 
 const SidebarItem = ({
     label,
@@ -138,7 +139,7 @@ const ConferencesService = () => {
                                 {/* Main Image */}
                                 <div className="relative rounded-2xl overflow-hidden mb-12 shadow-lg aspect-video">
                                     <img
-                                        src="/pa-conf.jpg"
+                                        src={offerings.find(o => o.id === "conferences")?.image || "/pa-conf.jpg"}
                                         alt="High-level Conference"
                                         className="w-full h-full object-cover"
                                     />

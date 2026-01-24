@@ -5,6 +5,7 @@ import { ChevronDown, ArrowRight, CheckCircle2, ChevronRight, ArrowUpRight } fro
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { offerings } from "@/data/services";
 
 const SidebarItem = ({
     label,
@@ -142,7 +143,7 @@ const TechnologyService = () => {
                                 {/* Main Image */}
                                 <div className="relative rounded-2xl overflow-hidden mb-12 shadow-lg aspect-video">
                                     <img
-                                        src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80"
+                                        src={offerings.find(o => o.id === "technology")?.image || "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80"}
                                         alt="Modern Technology"
                                         className="w-full h-full object-cover"
                                     />
