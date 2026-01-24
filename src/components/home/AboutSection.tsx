@@ -19,12 +19,12 @@ export function AboutSection() {
               <div className="absolute inset-0 gradient-hero opacity-90" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center text-primary-foreground p-8">
-                  <p className="font-heading text-6xl md:text-8xl font-bold mb-4">15+</p>
+                  <p className="font-heading text-6xl md:text-8xl font-bold mb-4">8+</p>
                   <p className="font-ui text-lg opacity-90">Years of Excellence</p>
                 </div>
               </div>
             </div>
-            
+
             {/* Floating Stats Card */}
             <div className="static mt-6 sm:absolute sm:-bottom-6 sm:-right-6 bg-card rounded-2xl shadow-card p-5 sm:p-6 border border-border">
               <div className="flex items-center gap-4">
@@ -33,7 +33,7 @@ export function AboutSection() {
                 </div>
                 <div>
                   <p className="font-heading font-bold text-2xl text-foreground">500+</p>
-                  <p className="font-ui text-sm text-muted-foreground">Organizations Transformed</p>
+                  <p className="font-ui text-sm text-muted-foreground">Professionals</p>
                 </div>
               </div>
             </div>
