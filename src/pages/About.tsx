@@ -60,7 +60,7 @@ export default function About() {
           const headerOffset = 100;
           const elementPosition = element.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-          
+
           window.scrollTo({
             top: offsetPosition,
             behavior: 'smooth'
@@ -108,7 +108,7 @@ export default function About() {
                   Our Story
                 </h2>
                 <p className="mt-6 leading-relaxed text-muted-foreground">
-                  Founded over a decade ago, fivesixfive began with a simple belief: that organizations succeed when
+                  Founded in 2018, fivesixfive began with a simple belief: that organizations succeed when
                   their people thrive. We've since grown into a trusted partner for companies across industries, helping
                   them navigate complex challenges and unlock their full potential.
                 </p>
@@ -118,8 +118,7 @@ export default function About() {
                   teams to build sustainable change that continues long after our engagement ends.
                 </p>
                 <p className="mt-4 leading-relaxed text-muted-foreground">
-                  Today, we're proud to have served over 150 organizations, developed more than 500 leaders, and
-                  maintained a 98% client satisfaction rate. But what matters most to us is the lasting impact we create
+                  Today, we're proud to have served 50+ organisations, developed 500+ leaders & professionals. Our reviews are usually between 4.7 and 5.0 out of 5.0. But what matters most to us is the lasting impact we create
                   together.
                 </p>
               </div>
