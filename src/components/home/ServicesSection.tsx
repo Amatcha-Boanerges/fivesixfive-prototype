@@ -28,25 +28,25 @@ export function ServicesSection() {
     <>
       {/* Desktop/Tablet Horizontal Scroll */}
       <section ref={containerRef} className="hidden lg:block relative h-[200vh] bg-background">
-        <div className="sticky top-0 h-screen overflow-hidden flex flex-col py-24">
-          <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="sticky top-0 h-screen overflow-hidden flex flex-col py-16 xl:py-24">
+          <div className="max-w-3xl mx-auto text-center mb-8 lg:mb-10 xl:mb-16">
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-ui text-sm font-medium mb-4">
               Our Services
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-heading font-bold text-foreground mb-4 lg:mb-4 xl:mb-6">
               Strategic Solutions for <span className="gradient-text">Lasting Impact</span>
             </h2>
-            <p className="text-lg text-muted-foreground font-body">
+            <p className="text-base lg:text-lg text-muted-foreground font-body">
               We don't do quick fixes. Our approach is built on deep partnerships that create sustainable transformation.
             </p>
           </div>
 
-          <motion.div style={{ x }} className="flex gap-8 pl-[10vw] w-max">
+          <motion.div style={{ x }} className="flex gap-6 lg:gap-8 pl-[10vw] w-max">
             {services.map((service, index) => (
               <Link
                 key={service.title}
                 to={`/services/${service.id}`}
-                className="w-[350px] md:w-[450px] h-[400px] flex-shrink-0"
+                className="w-[350px] lg:w-[380px] xl:w-[450px] h-[340px] lg:h-[360px] xl:h-[400px] flex-shrink-0"
               >
                 <div className="group relative p-6 h-full rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-2xl flex flex-col justify-between">
                   <div>
