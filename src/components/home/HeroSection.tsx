@@ -15,7 +15,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen-safe lg:min-h-[calc(100dvh-5rem)] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen-safe lg:min-h-[calc(100dvh-5rem)] xl:min-h-screen-safe flex items-center justify-center overflow-hidden">
       {/* Animated Gradient Background */}
       <div className="absolute inset-0 gradient-hero animate-gradient opacity-95" />
 
