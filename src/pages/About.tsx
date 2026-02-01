@@ -16,7 +16,7 @@ const values = [
   {
     icon: Target,
     title: "Strategic Partnership",
-    description: "We're not vendors—we're partners invested in your long-term success and sustainable growth.",
+    description: "We're not vendors - we're partners invested in your long-term success and sustainable growth.",
   },
   {
     icon: Zap,
