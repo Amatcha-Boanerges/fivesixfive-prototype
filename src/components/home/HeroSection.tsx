@@ -91,20 +91,8 @@ export function HeroSection() {
               Trusted by forward-thinking organizations
             </p>
             
-            {/* Static row for lg screens (14" laptops) */}
-            <div className="hidden lg:flex xl:hidden flex-wrap justify-center gap-x-6 gap-y-2 opacity-70">
-              {["Fortune 500", "Global NGOs", "Tech Startups", "Healthcare", "Finance"].map((partner) => (
-                <span
-                  key={partner}
-                  className="text-primary-foreground/60 font-heading font-semibold text-base whitespace-nowrap"
-                >
-                  {partner}
-                </span>
-              ))}
-            </div>
-
-            {/* Animated ticker for mobile/tablet and xl+ */}
-            <div className="lg:hidden xl:block relative overflow-hidden">
+            {/* Animated ticker for all screen sizes */}
+            <div className="relative overflow-hidden">
               <div className="overflow-hidden">
                 <div className="flex w-max flex-nowrap items-center gap-8 md:gap-12 opacity-70 animate-ticker mx-auto">
                   {Array.from({ length: 3 }, () => ["Fortune 500", "Global NGOs", "Tech Startups", "Healthcare", "Finance"]).flat().map((partner, index) => (
