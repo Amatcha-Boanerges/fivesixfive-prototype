@@ -43,7 +43,7 @@ const team = [
     name: "Catherine Engmann",
     role: "Managing Partner",
     image: "/managing-partner-2.jpg",
-    bio: "Expert in values-based culture design and employee engagement.",
+    bio: "Expert in values-based culture design and Corporate Governance.",
   },
 ];
 
