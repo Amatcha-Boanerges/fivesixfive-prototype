@@ -197,7 +197,7 @@ const PeopleService = () => {
                                         </h2>
                                         <div className="text-muted-foreground leading-relaxed space-y-4">
                                             <p>
-                                                We don’t just "train"—we transform. We <strong>develop custom learning programmes</strong> and build training flows based on
+                                                We don’t just "train" - we transform. We <strong>develop custom learning programmes</strong> and build training flows based on
                                                 <strong>proprietary research</strong> suited specifically to your client profile and industry demands.
                                             </p>
                                             <p>
