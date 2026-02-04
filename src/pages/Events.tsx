@@ -56,7 +56,7 @@ export default function Events() {
                 Events & Webinars
               </h1>
               <p className="text-xl text-primary-foreground/80 font-body">
-                Join our community of forward-thinking leaders. 
+                Join our community of forward-thinking leaders.
                 Attend live sessions, access on-demand content, and connect with peers.
               </p>
             </div>
@@ -86,16 +86,16 @@ export default function Events() {
                   </h2>
                   <p className="mb-8 max-w-xl text-lg leading-relaxed text-primary-foreground/70">
                     Join 500+ culture leaders and HR professionals for two days of inspiration, networking, and strategic
-                    development in the heart of London.
+                    development in Accra, Ghana.
                   </p>
                   <div className="mb-10 flex flex-wrap gap-8 text-sm font-ui text-primary-foreground/70">
                     <div className="flex items-center space-x-2">
                       <Calendar size={18} className="text-secondary" />
-                      <span>March 14-15, 2025</span>
+                      <span>17th - 18th JULY 2025</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Users size={18} className="text-secondary" />
-                      <span>The Barbican, London</span>
+                      <MapPin size={18} className="text-secondary" />
+                      <span>Accra, Ghana</span>
                     </div>
                   </div>
                   <Button size="lg" className="bg-white text-foreground hover:bg-secondary hover:text-white">
@@ -135,11 +135,10 @@ export default function Events() {
                     <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-3">
-                          <span className={`px-3 py-1 rounded-full text-xs font-ui font-medium ${
-                            event.isLive 
-                              ? "bg-secondary/10 text-secondary" 
+                          <span className={`px-3 py-1 rounded-full text-xs font-ui font-medium ${event.isLive
+                              ? "bg-secondary/10 text-secondary"
                               : "bg-muted text-muted-foreground"
-                          }`}>
+                            }`}>
                             {event.type}
                           </span>
                           {event.isLive && (
