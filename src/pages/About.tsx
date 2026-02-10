@@ -37,15 +37,47 @@ const team = [
     name: "Maame Gaisey",
     role: "Managing Partner",
     image: "/managing-partner-1.jpg",
+    video: "/video%20team.mp4",
     bio: "20+ years of experience in HR, Values and organizational transformation and leadership development.",
   },
   {
     name: "Catherine Engmann",
     role: "Managing Partner",
     image: "/managing-partner-2.jpg",
+    video: "/video%20team.mp4",
     bio: "Expert in values-based culture design and Corporate Governance.",
   },
 ];
+
+const TeamMemberCard = ({ member }: { member: typeof team[0] }) => {
+  return (
+    <div className="group text-center">
+      <div className="relative mx-auto mb-4 aspect-[3/4] w-full max-w-[320px] overflow-hidden rounded-2xl">
+        <video
+          src={member.video}
+          poster={member.image || "/placeholder.svg"}
+          className="h-full w-full object-cover transition-transform group-hover:scale-105 cursor-pointer"
+          muted
+          loop
+          playsInline
+          onMouseEnter={(e) => e.currentTarget.play()}
+          onMouseLeave={(e) => {
+            e.currentTarget.pause();
+            e.currentTarget.currentTime = 0;
+          }}
+        />
+      </div>
+      <h3 className="font-heading text-lg font-semibold text-foreground">
+        {member.name}
+      </h3>
+      <p className="font-ui text-sm font-medium text-primary">
+        {member.role}
+      </p>
+      <p className="mt-2 text-sm text-muted-foreground">{member.bio}</p>
+    </div>
+  );
+};
+
 
 export default function About() {
   const location = useLocation();
@@ -173,22 +205,7 @@ export default function About() {
 
             <div className="mt-14 grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
               {team.map((member) => (
-                <div key={member.name} className="group text-center">
-                  <div className="relative mx-auto mb-4 aspect-[3/4] w-full max-w-[320px] overflow-hidden rounded-2xl">
-                    <img
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      className="h-full w-full object-cover transition-transform group-hover:scale-105"
-                    />
-                  </div>
-                  <h3 className="font-heading text-lg font-semibold text-foreground">
-                    {member.name}
-                  </h3>
-                  <p className="font-ui text-sm font-medium text-primary">
-                    {member.role}
-                  </p>
-                  <p className="mt-2 text-sm text-muted-foreground">{member.bio}</p>
-                </div>
+                <TeamMemberCard key={member.name} member={member} />
               ))}
             </div>
           </div>
