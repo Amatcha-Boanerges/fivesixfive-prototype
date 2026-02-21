@@ -8,9 +8,11 @@ export interface BeehiivPost {
     image?: string;
 }
 
-export async function fetchBeehiivFeed(url: string, limit: number = 9): Promise<BeehiivPost[]> {
+export async function fetchBeehiivFeed(
+    url: string = import.meta.env.VITE_BEEHIIV_FEED_URL,
+    limit: number = 9
+): Promise<BeehiivPost[]> {
     try {
-        // Switching to corsproxy.io for better reliability
         const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(url)}`;
         const response = await fetch(proxyUrl);
 
@@ -42,20 +44,17 @@ export async function fetchBeehiivFeed(url: string, limit: number = 9): Promise<
             const pubDate = item.querySelector("pubDate")?.textContent || "";
             const description = item.querySelector("description")?.textContent || "";
 
-            // More robust way to get encoded content across different browser implementations
             let content = item.querySelector("encoded")?.textContent ||
                 item.querySelector("content\\:encoded")?.textContent ||
                 "";
 
             if (!content) {
-                // Fallback for some parsers
                 const contentNodes = item.getElementsByTagNameNS("http://purl.org/rss/1.0/modules/content/", "encoded");
                 if (contentNodes.length > 0) {
                     content = contentNodes[0].textContent || "";
                 }
             }
 
-            // Try to get image from enclosure or media:content or within content
             const enclosure = item.querySelector("enclosure");
             const imageUrl = enclosure?.getAttribute("url") || "";
 

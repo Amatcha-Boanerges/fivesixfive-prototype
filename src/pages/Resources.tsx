@@ -79,7 +79,7 @@ export default function Resources() {
   useEffect(() => {
     const loadPosts = async () => {
       setIsLoading(true);
-      const posts = await fetchBeehiivFeed("https://rss.beehiiv.com/feeds/h20TrwIVLh.xml", 9);
+      const posts = await fetchBeehiivFeed();
       setBeehiivPosts(posts);
       setIsLoading(false);
     };
