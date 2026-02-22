@@ -76,21 +76,23 @@ export function HeroSection() {
               Start Your Journey
               <ArrowRight size={20} />
             </Button>
-            <Button variant="heroOutline" size="xl">
-              <Play size={18} className="mr-1" />
-              Watch Our Story
+            <Button variant="heroOutline" size="xl" asChild>
+              <a href="https://fivesixfive.co/conference" target="_blank" rel="noopener noreferrer">
+                Register for Conference
+                <ArrowRight size={20} className="ml-2" />
+              </a>
             </Button>
           </div>
 
           {/* Trust Indicators */}
-          <div 
+          <div
             className="mt-8 sm:mt-10 md:mt-12 lg:mt-6 xl:mt-10 pt-4 sm:pt-6 lg:pt-4 border-t border-primary-foreground/10 animate-fade-in"
             style={{ animationDelay: "0.4s" }}
           >
             <p className="text-primary-foreground/50 font-ui text-sm uppercase tracking-wider mb-4 lg:mb-3 xl:mb-6">
               Trusted by forward-thinking organizations
             </p>
-            
+
             {/* Animated ticker for all screen sizes */}
             <div className="relative overflow-hidden">
               <div className="overflow-hidden">
